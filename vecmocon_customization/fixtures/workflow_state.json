@@ -1,0 +1,101 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-02-26 09:45:17.724195",
+  "name": "Under Quality Inspection",
+  "style": "",
+  "workflow_state_name": "Under Quality Inspection"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-01-06 09:46:34.498650",
+  "name": "Pending For Quality Inspection",
+  "style": "Warning",
+  "workflow_state_name": "Pending For Quality Inspection"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-01-06 10:37:25.105338",
+  "name": "Draft",
+  "style": "Danger",
+  "workflow_state_name": "Draft"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "remove",
+  "modified": "2025-08-30 00:05:42.546309",
+  "name": "Rejected",
+  "style": "Danger",
+  "workflow_state_name": "Rejected"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "question-sign",
+  "modified": "2025-08-30 00:05:42.543652",
+  "name": "Pending",
+  "style": "",
+  "workflow_state_name": "Pending"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-10-28 16:32:04.978631",
+  "name": "Cancelled",
+  "style": "Danger",
+  "workflow_state_name": "Cancelled"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "ok-sign",
+  "modified": "2025-08-30 00:05:42.544751",
+  "name": "Approved",
+  "style": "Success",
+  "workflow_state_name": "Approved"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-01-19 16:20:06.302886",
+  "name": "Pending Purchase Engineer Approvel",
+  "style": "",
+  "workflow_state_name": "Pending Purchase Engineer Approvel"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-01-19 16:20:24.198866",
+  "name": "Pending Sourcing Manager Approvel",
+  "style": "",
+  "workflow_state_name": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-01-19 16:20:50.249689",
+  "name": "Pending Senior Sourcing Manager Approval",
+  "style": "",
+  "workflow_state_name": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-02-26 09:35:16.732873",
+  "name": "Quality Inspection Completed",
+  "style": "Success",
+  "workflow_state_name": "Quality Inspection Completed"
+ }
+]

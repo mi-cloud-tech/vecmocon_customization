@@ -1,0 +1,3809 @@
+[
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-06 12:44:43.842629",
+  "name": "7v6e8fkkub",
+  "permitted_roles": [
+   {
+    "parent": "7v6e8fkkub",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "7v6e8fkkub",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00008",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-06 12:44:44.430719",
+  "name": "7vceubhm61",
+  "permitted_roles": [
+   {
+    "parent": "7vceubhm61",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00008",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-06 20:30:15.601734",
+  "name": "ons81m2v16",
+  "permitted_roles": [
+   {
+    "parent": "ons81m2v16",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00008",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-08 14:01:21.174691",
+  "name": "cbr2njqev0",
+  "permitted_roles": [
+   {
+    "parent": "cbr2njqev0",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "cbr2njqev0",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00009",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-08 14:01:26.076227",
+  "name": "cdc6gk1bdd",
+  "permitted_roles": [
+   {
+    "parent": "cdc6gk1bdd",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00009",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-13 20:28:40.288115",
+  "name": "a2209mc06r",
+  "permitted_roles": [
+   {
+    "parent": "a2209mc06r",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00006",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-13 20:32:30.188429",
+  "name": "c9ttt0078a",
+  "permitted_roles": [
+   {
+    "parent": "c9ttt0078a",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "c9ttt0078a",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00010",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-13 20:32:30.711428",
+  "name": "ca3pu0d13b",
+  "permitted_roles": [
+   {
+    "parent": "ca3pu0d13b",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00010",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-13 20:35:38.986808",
+  "name": "e4t93f9u4f",
+  "permitted_roles": [
+   {
+    "parent": "e4t93f9u4f",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "e4t93f9u4f",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00011",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-13 20:35:39.417706",
+  "name": "e52gellmv1",
+  "permitted_roles": [
+   {
+    "parent": "e52gellmv1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00011",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-13 20:47:17.914255",
+  "name": "kvbdh93dce",
+  "permitted_roles": [
+   {
+    "parent": "kvbdh93dce",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00011",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-13 20:49:09.754261",
+  "name": "m293ci7oro",
+  "permitted_roles": [
+   {
+    "parent": "m293ci7oro",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "m293ci7oro",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00012",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-13 20:49:10.364376",
+  "name": "m2f0pitbkr",
+  "permitted_roles": [
+   {
+    "parent": "m2f0pitbkr",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00012",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-13 20:49:38.039023",
+  "name": "mb43phul9i",
+  "permitted_roles": [
+   {
+    "parent": "mb43phul9i",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00012",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-15 15:32:21.042767",
+  "name": "ju2qq5hubk",
+  "permitted_roles": [
+   {
+    "parent": "ju2qq5hubk",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "ju2qq5hubk",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00130",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-15 15:32:21.728509",
+  "name": "ju9brab2ef",
+  "permitted_roles": [
+   {
+    "parent": "ju9brab2ef",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00130",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-15 15:34:28.564121",
+  "name": "l5tt7ba4d5",
+  "permitted_roles": [
+   {
+    "parent": "l5tt7ba4d5",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "l5tt7ba4d5",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00013",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-15 15:34:33.383449",
+  "name": "l7drr2h736",
+  "permitted_roles": [
+   {
+    "parent": "l7drr2h736",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00013",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 19:44:27.451075",
+  "name": "jd2bpp8oss",
+  "permitted_roles": [
+   {
+    "parent": "jd2bpp8oss",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "jd2bpp8oss",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00014",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 19:50:30.024456",
+  "name": "mucunehi7m",
+  "permitted_roles": [
+   {
+    "parent": "mucunehi7m",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00014",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 19:53:21.057267",
+  "name": "ojqdb9aq24",
+  "permitted_roles": [
+   {
+    "parent": "ojqdb9aq24",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "ojqdb9aq24",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00015",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 19:53:21.648709",
+  "name": "ok0sfcalk5",
+  "permitted_roles": [
+   {
+    "parent": "ok0sfcalk5",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00015",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 19:55:18.723807",
+  "name": "pojmnbgarj",
+  "permitted_roles": [
+   {
+    "parent": "pojmnbgarj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "pojmnbgarj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00016",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 19:55:19.507491",
+  "name": "porhlb35ml",
+  "permitted_roles": [
+   {
+    "parent": "porhlb35ml",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00016",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 20:04:03.861992",
+  "name": "usm75a0orf",
+  "permitted_roles": [
+   {
+    "parent": "usm75a0orf",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "usm75a0orf",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00018",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 20:04:04.628296",
+  "name": "usu9fjc5u9",
+  "permitted_roles": [
+   {
+    "parent": "usu9fjc5u9",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00018",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 20:07:56.990236",
+  "name": "15hpqoioa7",
+  "permitted_roles": [
+   {
+    "parent": "15hpqoioa7",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00018",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 20:12:05.970065",
+  "name": "3jb86l3ub0",
+  "permitted_roles": [
+   {
+    "parent": "3jb86l3ub0",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "3jb86l3ub0",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00019",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-16 20:12:17.342030",
+  "name": "3mtap1olj5",
+  "permitted_roles": [
+   {
+    "parent": "3mtap1olj5",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "3mtap1olj5",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00019",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-19 15:33:09.248551",
+  "name": "3d49cqe7jg",
+  "permitted_roles": [
+   {
+    "parent": "3d49cqe7jg",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "3d49cqe7jg",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00020",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-19 15:33:19.033304",
+  "name": "3g60t55qig",
+  "permitted_roles": [
+   {
+    "parent": "3g60t55qig",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00020",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-19 16:24:37.283639",
+  "name": "1i4d5ci0q3",
+  "permitted_roles": [
+   {
+    "parent": "1i4d5ci0q3",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "THE GLOBAL AUTOMOTIVE PRODUCTS",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-19 16:26:26.305540",
+  "name": "2k7d3c0hfs",
+  "permitted_roles": [
+   {
+    "parent": "2k7d3c0hfs",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "THE GLOBAL AUTOMOTIVE PRODUCTS",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-19 16:26:41.676745",
+  "name": "2p0nt18i98",
+  "permitted_roles": [
+   {
+    "parent": "2p0nt18i98",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Gaurav USD Supplier",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-19 23:53:06.334494",
+  "name": "8b7il6v39u",
+  "permitted_roles": [
+   {
+    "parent": "8b7il6v39u",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "8b7il6v39u",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00021",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-19 23:53:08.695408",
+  "name": "8budumndhe",
+  "permitted_roles": [
+   {
+    "parent": "8budumndhe",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Administrator"
+   },
+   {
+    "parent": "8budumndhe",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "8budumndhe",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00021",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-19 23:55:09.067111",
+  "name": "9hicihgfsd",
+  "permitted_roles": [
+   {
+    "parent": "9hicihgfsd",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00021",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-20 21:15:56.679139",
+  "name": "o0e8f5uehm",
+  "permitted_roles": [
+   {
+    "parent": "o0e8f5uehm",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "o0e8f5uehm",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00022",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-20 21:16:12.205508",
+  "name": "o5abbandpt",
+  "permitted_roles": [
+   {
+    "parent": "o5abbandpt",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "o5abbandpt",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   },
+   {
+    "parent": "o5abbandpt",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Administrator"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00022",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-20 21:17:22.423668",
+  "name": "or8qpnmo53",
+  "permitted_roles": [
+   {
+    "parent": "or8qpnmo53",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00022",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-20 21:23:37.891706",
+  "name": "sgigmt0nt4",
+  "permitted_roles": [
+   {
+    "parent": "sgigmt0nt4",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Vecmocon",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-20 21:23:42.927802",
+  "name": "si5sn0gjrm",
+  "permitted_roles": [
+   {
+    "parent": "si5sn0gjrm",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Vecmocon",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-21 17:41:08.811634",
+  "name": "5t071tgjn8",
+  "permitted_roles": [
+   {
+    "parent": "5t071tgjn8",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Rama krishna",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Purchase Engineer Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-21 17:42:30.643574",
+  "name": "6mijm6n0rn",
+  "permitted_roles": [
+   {
+    "parent": "6mijm6n0rn",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Rama krishna",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-21 18:30:09.620282",
+  "name": "2k0erf2b73",
+  "permitted_roles": [
+   {
+    "parent": "2k0erf2b73",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "2k0erf2b73",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00023",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-21 18:30:10.184351",
+  "name": "2k5mnmkbbq",
+  "permitted_roles": [
+   {
+    "parent": "2k5mnmkbbq",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "2k5mnmkbbq",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   },
+   {
+    "parent": "2k5mnmkbbq",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Administrator"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00023",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 17:01:21.246096",
+  "name": "l2s21t78nj",
+  "permitted_roles": [
+   {
+    "parent": "l2s21t78nj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "l2s21t78nj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00024",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 17:01:24.515700",
+  "name": "l3t1bnidcl",
+  "permitted_roles": [
+   {
+    "parent": "l3t1bnidcl",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00024",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 17:19:20.628323",
+  "name": "vk6mn9o70u",
+  "permitted_roles": [
+   {
+    "parent": "vk6mn9o70u",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "vk6mn9o70u",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00025",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 17:19:30.446653",
+  "name": "vn812ch8vp",
+  "permitted_roles": [
+   {
+    "parent": "vn812ch8vp",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00025",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 17:19:52.660926",
+  "name": "vu631k6vr9",
+  "permitted_roles": [
+   {
+    "parent": "vu631k6vr9",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "vu631k6vr9",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00026",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 17:19:56.035997",
+  "name": "vv88j0fimb",
+  "permitted_roles": [
+   {
+    "parent": "vv88j0fimb",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00026",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 17:30:15.220330",
+  "name": "60ok9t1916",
+  "permitted_roles": [
+   {
+    "parent": "60ok9t1916",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "60ok9t1916",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00027",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 17:30:18.179951",
+  "name": "61lj9fp1ef",
+  "permitted_roles": [
+   {
+    "parent": "61lj9fp1ef",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00027",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 19:32:08.190761",
+  "name": "de12rior8o",
+  "permitted_roles": [
+   {
+    "parent": "de12rior8o",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "de12rior8o",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00028",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 19:32:26.261809",
+  "name": "djm0vcp9i4",
+  "permitted_roles": [
+   {
+    "parent": "djm0vcp9i4",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00028",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 19:39:21.072617",
+  "name": "hlalif5pt6",
+  "permitted_roles": [
+   {
+    "parent": "hlalif5pt6",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "hlalif5pt6",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00029",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 19:39:31.458687",
+  "name": "hoiqsg1pb1",
+  "permitted_roles": [
+   {
+    "parent": "hoiqsg1pb1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "hoiqsg1pb1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   },
+   {
+    "parent": "hoiqsg1pb1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Administrator"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00029",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 19:40:01.417382",
+  "name": "i1uhcsnrqm",
+  "permitted_roles": [
+   {
+    "parent": "i1uhcsnrqm",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "i1uhcsnrqm",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00030",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-27 19:40:14.542745",
+  "name": "i619cktshb",
+  "permitted_roles": [
+   {
+    "parent": "i619cktshb",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00030",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 14:03:10.259009",
+  "name": "7dueime0tj",
+  "permitted_roles": [
+   {
+    "parent": "7dueime0tj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Kaynes Technology",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending Purchase Engineer Approvel"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:01:42.341189",
+  "name": "pgfpodon7b",
+  "permitted_roles": [
+   {
+    "parent": "pgfpodon7b",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Nisiki India Pvt. Ltd",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending Purchase Engineer Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.635152",
+  "name": "q14bdrr71c",
+  "permitted_roles": [
+   {
+    "parent": "q14bdrr71c",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Elymer International Private Limited",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.684828",
+  "name": "q14jlg85b7",
+  "permitted_roles": [
+   {
+    "parent": "q14jlg85b7",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "TDS Testing",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.714684",
+  "name": "q157v1gipp",
+  "permitted_roles": [
+   {
+    "parent": "q157v1gipp",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "ASTRALINK - TDS",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.743104",
+  "name": "q15ksi2ihb",
+  "permitted_roles": [
+   {
+    "parent": "q15ksi2ihb",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Zhoukou Baocheng Electronic Technology Co., Ltd.",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.770425",
+  "name": "q15d28jad9",
+  "permitted_roles": [
+   {
+    "parent": "q15d28jad9",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "RFNT Solution Private Limited",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.800163",
+  "name": "q16usqbb1t",
+  "permitted_roles": [
+   {
+    "parent": "q16usqbb1t",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Nisiki India Pvt Ltd",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.859965",
+  "name": "q16oe4plvn",
+  "permitted_roles": [
+   {
+    "parent": "q16oe4plvn",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Import supllier",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.882601",
+  "name": "q160i7k5v3",
+  "permitted_roles": [
+   {
+    "parent": "q160i7k5v3",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "TIMESCAN LOGISTICS (INDIA)PVT LTD",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.905404",
+  "name": "q17sit4pb7",
+  "permitted_roles": [
+   {
+    "parent": "q17sit4pb7",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Indigrid Technology",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.932366",
+  "name": "q170j9svtn",
+  "permitted_roles": [
+   {
+    "parent": "q170j9svtn",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Napinos - TDS",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.958663",
+  "name": "q17b0qgcg8",
+  "permitted_roles": [
+   {
+    "parent": "q17b0qgcg8",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Sumit Industries - TDS",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:35.984359",
+  "name": "q17qhacaoc",
+  "permitted_roles": [
+   {
+    "parent": "q17qhacaoc",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "J&S Wirelinks Pvt.Ltd - USD",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:36.007886",
+  "name": "q18o7r0fg8",
+  "permitted_roles": [
+   {
+    "parent": "q18o7r0fg8",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Techno Trades",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:36.032352",
+  "name": "q1840puv3o",
+  "permitted_roles": [
+   {
+    "parent": "q1840puv3o",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Sama Bharat Tech",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:36.057783",
+  "name": "q18cevf2km",
+  "permitted_roles": [
+   {
+    "parent": "q18cevf2km",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "&T Switchgear Limited",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:36.082055",
+  "name": "q18of01a4f",
+  "permitted_roles": [
+   {
+    "parent": "q18of01a4f",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Exide Ltd",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:36.106547",
+  "name": "q1952ku7u7",
+  "permitted_roles": [
+   {
+    "parent": "q1952ku7u7",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Toyota Motor Co. Ltd",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:02:36.139415",
+  "name": "q19366bo2t",
+  "permitted_roles": [
+   {
+    "parent": "q19366bo2t",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Shigan Electronics Private Limited",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.182895",
+  "name": "qalujqg1os",
+  "permitted_roles": [
+   {
+    "parent": "qalujqg1os",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Shigan Electronics Private Limited",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.229373",
+  "name": "qammpmvguu",
+  "permitted_roles": [
+   {
+    "parent": "qammpmvguu",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Toyota Motor Co. Ltd",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.257451",
+  "name": "qammr02ovb",
+  "permitted_roles": [
+   {
+    "parent": "qammr02ovb",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Exide Ltd",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.284761",
+  "name": "qamfc1snco",
+  "permitted_roles": [
+   {
+    "parent": "qamfc1snco",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "&T Switchgear Limited",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.310954",
+  "name": "qanhja4eah",
+  "permitted_roles": [
+   {
+    "parent": "qanhja4eah",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Sama Bharat Tech",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.334436",
+  "name": "qanncibnk4",
+  "permitted_roles": [
+   {
+    "parent": "qanncibnk4",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Techno Trades",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.360392",
+  "name": "qanpeo3jfi",
+  "permitted_roles": [
+   {
+    "parent": "qanpeo3jfi",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "J&S Wirelinks Pvt.Ltd - USD",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.385261",
+  "name": "qanv7pf07t",
+  "permitted_roles": [
+   {
+    "parent": "qanv7pf07t",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Sumit Industries - TDS",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.410858",
+  "name": "qaoj0o81e4",
+  "permitted_roles": [
+   {
+    "parent": "qaoj0o81e4",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Napinos - TDS",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.437158",
+  "name": "qao1dbbudn",
+  "permitted_roles": [
+   {
+    "parent": "qao1dbbudn",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Indigrid Technology",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.460613",
+  "name": "qao6ig1aic",
+  "permitted_roles": [
+   {
+    "parent": "qao6ig1aic",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "TIMESCAN LOGISTICS (INDIA)PVT LTD",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.485764",
+  "name": "qaoole2urg",
+  "permitted_roles": [
+   {
+    "parent": "qaoole2urg",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Import supllier",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.511972",
+  "name": "qapbkr39qu",
+  "permitted_roles": [
+   {
+    "parent": "qapbkr39qu",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Nisiki India Pvt Ltd",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.538182",
+  "name": "qapofsjssb",
+  "permitted_roles": [
+   {
+    "parent": "qapofsjssb",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "RFNT Solution Private Limited",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.562596",
+  "name": "qaportkuhd",
+  "permitted_roles": [
+   {
+    "parent": "qaportkuhd",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Zhoukou Baocheng Electronic Technology Co., Ltd.",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.586142",
+  "name": "qap9mbbcd1",
+  "permitted_roles": [
+   {
+    "parent": "qap9mbbcd1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "ASTRALINK - TDS",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.609528",
+  "name": "qaqqgkceir",
+  "permitted_roles": [
+   {
+    "parent": "qaqqgkceir",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "TDS Testing",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.635885",
+  "name": "qaqjf4g3rj",
+  "permitted_roles": [
+   {
+    "parent": "qaqjf4g3rj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Elymer International Private Limited",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-01 20:03:06.659045",
+  "name": "qaqluq7fdo",
+  "permitted_roles": [
+   {
+    "parent": "qaqluq7fdo",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Rama krishna",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 15:45:27.892525",
+  "name": "f3ufuhfht2",
+  "permitted_roles": [
+   {
+    "parent": "f3ufuhfht2",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "f3ufuhfht2",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00031",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 15:46:14.674104",
+  "name": "fii7oekji8",
+  "permitted_roles": [
+   {
+    "parent": "fii7oekji8",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00031",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 15:48:07.263884",
+  "name": "glo43850er",
+  "permitted_roles": [
+   {
+    "parent": "glo43850er",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "glo43850er",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00032",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 15:48:10.663344",
+  "name": "gmq9fujstj",
+  "permitted_roles": [
+   {
+    "parent": "gmq9fujstj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00032",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 15:51:29.798209",
+  "name": "il2ppalob7",
+  "permitted_roles": [
+   {
+    "parent": "il2ppalob7",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "il2ppalob7",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00033",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 15:51:30.543984",
+  "name": "il9qclbmq5",
+  "permitted_roles": [
+   {
+    "parent": "il9qclbmq5",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00033",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 15:51:50.818170",
+  "name": "irkv51sh8n",
+  "permitted_roles": [
+   {
+    "parent": "irkv51sh8n",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00033",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 15:59:39.497496",
+  "name": "ne3lnrnvcb",
+  "permitted_roles": [
+   {
+    "parent": "ne3lnrnvcb",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "ne3lnrnvcb",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00032-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 15:59:51.281913",
+  "name": "nhoc0pv150",
+  "permitted_roles": [
+   {
+    "parent": "nhoc0pv150",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00032-1",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 16:26:03.576741",
+  "name": "6t3jfs3dht",
+  "permitted_roles": [
+   {
+    "parent": "6t3jfs3dht",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "6t3jfs3dht",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00034",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 16:26:28.908001",
+  "name": "751487na5f",
+  "permitted_roles": [
+   {
+    "parent": "751487na5f",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00034",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 16:44:53.396060",
+  "name": "hu5iavimag",
+  "permitted_roles": [
+   {
+    "parent": "hu5iavimag",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "hu5iavimag",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00035",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 16:45:19.619158",
+  "name": "i6c1dcoufs",
+  "permitted_roles": [
+   {
+    "parent": "i6c1dcoufs",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00035",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 16:45:22.923465",
+  "name": "i7d5rurar3",
+  "permitted_roles": [
+   {
+    "parent": "i7d5rurar3",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00035",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 16:53:46.855119",
+  "name": "n4suocegg8",
+  "permitted_roles": [
+   {
+    "parent": "n4suocegg8",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "n4suocegg8",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00036",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 16:54:02.507704",
+  "name": "n9p147dlrf",
+  "permitted_roles": [
+   {
+    "parent": "n9p147dlrf",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00036",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 17:05:21.414187",
+  "name": "ttumqrb712",
+  "permitted_roles": [
+   {
+    "parent": "ttumqrb712",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "ttumqrb712",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00037",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 17:05:34.104359",
+  "name": "u1t8083hvh",
+  "permitted_roles": [
+   {
+    "parent": "u1t8083hvh",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00037",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 17:21:17.843544",
+  "name": "78q40gpjdm",
+  "permitted_roles": [
+   {
+    "parent": "78q40gpjdm",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "78q40gpjdm",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00038",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-02 17:21:20.273108",
+  "name": "79iskg0f5s",
+  "permitted_roles": [
+   {
+    "parent": "79iskg0f5s",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00038",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-09 14:19:33.173430",
+  "name": "f13krlqpk9",
+  "permitted_roles": [
+   {
+    "parent": "f13krlqpk9",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "TDS Challan Testing",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Purchase Engineer Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-09 14:19:51.692540",
+  "name": "f6t040lb0e",
+  "permitted_roles": [
+   {
+    "parent": "f6t040lb0e",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "TDS Challan Testing",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-09 14:19:53.390346",
+  "name": "f7d6hgt05m",
+  "permitted_roles": [
+   {
+    "parent": "f7d6hgt05m",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "TDS Challan Testing",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-09 18:03:03.857645",
+  "name": "hvuduu34il",
+  "permitted_roles": [
+   {
+    "parent": "hvuduu34il",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "hvuduu34il",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00039",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-09 18:03:04.503670",
+  "name": "i059v5ghgo",
+  "permitted_roles": [
+   {
+    "parent": "i059v5ghgo",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00039",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-09 18:03:35.651178",
+  "name": "i9srj5um8q",
+  "permitted_roles": [
+   {
+    "parent": "i9srj5um8q",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00039",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-17 11:02:46.297153",
+  "name": "pnfaa4p3p8",
+  "permitted_roles": [
+   {
+    "parent": "pnfaa4p3p8",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00019",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-17 11:07:22.898548",
+  "name": "sdtclmqu3a",
+  "permitted_roles": [
+   {
+    "parent": "sdtclmqu3a",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "sdtclmqu3a",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00040",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-24 16:46:44.466983",
+  "name": "lgsa57j41e",
+  "permitted_roles": [
+   {
+    "parent": "lgsa57j41e",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "lgsa57j41e",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00041",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-24 16:46:52.955209",
+  "name": "ljhe5ac73q",
+  "permitted_roles": [
+   {
+    "parent": "ljhe5ac73q",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00041",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-24 16:47:06.874068",
+  "name": "lnsskf7ush",
+  "permitted_roles": [
+   {
+    "parent": "lnsskf7ush",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "lnsskf7ush",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00041-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-24 16:47:09.011206",
+  "name": "loi90d80bk",
+  "permitted_roles": [
+   {
+    "parent": "loi90d80bk",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00041-1",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-24 16:47:36.234904",
+  "name": "m127v7fs0c",
+  "permitted_roles": [
+   {
+    "parent": "m127v7fs0c",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "m127v7fs0c",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00042",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "sandeep.yadav@vecmocon.com",
+  "completed_by_role": "Purchase User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-25 16:02:45.252056",
+  "name": "7g4kq9vtki",
+  "permitted_roles": [
+   {
+    "parent": "7g4kq9vtki",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "7g4kq9vtki",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00043",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "sandeep.yadav@vecmocon.com",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-25 16:02:45.781354",
+  "name": "7g9ug8v2ro",
+  "permitted_roles": [
+   {
+    "parent": "7g9ug8v2ro",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00043",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-25 16:04:01.886675",
+  "name": "8825sjg422",
+  "permitted_roles": [
+   {
+    "parent": "8825sjg422",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00043",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 05:31:24.418874",
+  "name": "1acl5c7dv6",
+  "permitted_roles": [
+   {
+    "parent": "1acl5c7dv6",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00029",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Approved"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 09:30:08.144053",
+  "name": "d6h5uorla1",
+  "permitted_roles": [
+   {
+    "parent": "d6h5uorla1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "d6h5uorla1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00044",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 09:37:36.015298",
+  "name": "higq4n4fd7",
+  "permitted_roles": [
+   {
+    "parent": "higq4n4fd7",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00028-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 09:40:01.551633",
+  "name": "ivvg9hqbpc",
+  "permitted_roles": [
+   {
+    "parent": "ivvg9hqbpc",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00028-2",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 09:44:02.419528",
+  "name": "lb8spk2th4",
+  "permitted_roles": [
+   {
+    "parent": "lb8spk2th4",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00028-2",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 10:13:30.683762",
+  "name": "6jq41osodg",
+  "permitted_roles": [
+   {
+    "parent": "6jq41osodg",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00029",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 10:13:42.282997",
+  "name": "6nepmqojmn",
+  "permitted_roles": [
+   {
+    "parent": "6nepmqojmn",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00029",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 10:14:11.843240",
+  "name": "70m7abaams",
+  "permitted_roles": [
+   {
+    "parent": "70m7abaams",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00029-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 10:14:16.695350",
+  "name": "727p62b9ef",
+  "permitted_roles": [
+   {
+    "parent": "727p62b9ef",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00029-1",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 11:44:41.825711",
+  "name": "s1ik3lf26e",
+  "permitted_roles": [
+   {
+    "parent": "s1ik3lf26e",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00030",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 11:52:33.960212",
+  "name": "0l3arcfk1n",
+  "permitted_roles": [
+   {
+    "parent": "0l3arcfk1n",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00030",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 11:52:59.507252",
+  "name": "0t34lj0elh",
+  "permitted_roles": [
+   {
+    "parent": "0t34lj0elh",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00030-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 12:00:12.507698",
+  "name": "54dihkv88d",
+  "permitted_roles": [
+   {
+    "parent": "54dihkv88d",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00030-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 12:04:11.672137",
+  "name": "7f4abdum1i",
+  "permitted_roles": [
+   {
+    "parent": "7f4abdum1i",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00030-2",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 12:04:18.504230",
+  "name": "7h91etlvbs",
+  "permitted_roles": [
+   {
+    "parent": "7h91etlvbs",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00030-2",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "All",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-06 12:07:08.636161",
+  "name": "hue1efdjvr",
+  "permitted_roles": [
+   {
+    "parent": "hue1efdjvr",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "All"
+   },
+   {
+    "parent": "hue1efdjvr",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00006",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-06 12:08:05.011836",
+  "name": "ig2glov8so",
+  "permitted_roles": [
+   {
+    "parent": "ig2glov8so",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00006",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "test@gmail.com",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-23 16:40:35.382988",
+  "name": "0thacrsoed",
+  "permitted_roles": [
+   {
+    "parent": "0thacrsoed",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00107",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "test@gmail.com",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-23 16:40:54.618955",
+  "name": "13i4lv3rso",
+  "permitted_roles": [
+   {
+    "parent": "13i4lv3rso",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00108",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-23 19:04:13.435770",
+  "name": "l2m871a88r",
+  "permitted_roles": [
+   {
+    "parent": "l2m871a88r",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00109",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-27 00:11:36.399545",
+  "name": "ce4eq8sg5m",
+  "permitted_roles": [
+   {
+    "parent": "ce4eq8sg5m",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00110",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-27 00:12:07.736543",
+  "name": "cnted665vq",
+  "permitted_roles": [
+   {
+    "parent": "cnted665vq",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00110-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-27 12:10:15.397335",
+  "name": "hgqsjbrn7h",
+  "permitted_roles": [
+   {
+    "parent": "hgqsjbrn7h",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00111",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-28 14:41:14.000358",
+  "name": "lnkov033aj",
+  "permitted_roles": [
+   {
+    "parent": "lnkov033aj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00112",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-28 14:41:56.945422",
+  "name": "m515qabnmp",
+  "permitted_roles": [
+   {
+    "parent": "m515qabnmp",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00112-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-28 15:21:32.939799",
+  "name": "dbhps2sd2m",
+  "permitted_roles": [
+   {
+    "parent": "dbhps2sd2m",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00113",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-28 16:23:09.045632",
+  "name": "hei92k9tse",
+  "permitted_roles": [
+   {
+    "parent": "hei92k9tse",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00114",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-28 16:24:44.307680",
+  "name": "icb1825pd6",
+  "permitted_roles": [
+   {
+    "parent": "icb1825pd6",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00115",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Accounts Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-12-03 18:24:53.547236",
+  "name": "vp7flgcgsf",
+  "permitted_roles": [
+   {
+    "parent": "vp7flgcgsf",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Accounts Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-25-00127",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-06 10:36:01.666978",
+  "name": "si0735danl",
+  "permitted_roles": [
+   {
+    "parent": "si0735danl",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00004",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-01-06 11:19:37.704493",
+  "name": "m3h5eatr8c",
+  "permitted_roles": [
+   {
+    "parent": "m3h5eatr8c",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00003",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 12:23:15.258441",
+  "name": "ikgi34k8n1",
+  "permitted_roles": [
+   {
+    "parent": "ikgi34k8n1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "ikgi34k8n1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Purchase Receipt",
+  "reference_name": "PR-26-00048",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Draft"
+ }
+]

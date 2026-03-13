@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Barcode Label</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Arial', sans-serif;
+			background-color: #fff;
+			padding: 0;
+		}
+
+		.label-container {
+			width: 100mm;
+			height: 60mm;
+			border: 1px solid #000;
+			padding: 5mm;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			page-break-after: always;
+		}
+
+		.qr-section {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex: 1;
+			margin-bottom: 3mm;
+		}
+
+		.qr-code {
+			width: 40mm;
+			height: 40mm;
+			background-color: #fff;
+			border: 2px solid #000;
+		}
+
+		.barcode-info {
+			font-size: 7pt;
+			line-height: 1.2;
+			border-top: 1px solid #666;
+			padding-top: 2mm;
+		}
+
+		.info-row {
+			display: flex;
+			justify-content: space-between;
+			padding: 0.5mm 0;
+		}
+
+		.info-label {
+			font-weight: bold;
+			width: 35%;
+		}
+
+		.info-value {
+			word-break: break-all;
+			width: 65%;
+			text-align: right;
+		}
+
+		.barcode-string {
+			font-size: 6pt;
+			font-family: 'Courier New', monospace;
+			margin-top: 1mm;
+			padding-top: 1mm;
+			border-top: 1px dashed #999;
+			text-align: center;
+			word-break: break-all;
+		}
+
+		@media print {
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			.label-container {
+				page-break-inside: avoid;
+			}
+		}
+
+		@media screen {
+			.label-container {
+				margin: 10px;
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			}
+		}
+	</style>
+</head>
+<body>
+	{% for doc in doc.get('items', [doc]) %}
+		<div class="label-container">
+			<div class="qr-section">
+				<div class="qr-code" id="qr-{{ loop.index }}"></div>
+			</div>
+
+			<div class="barcode-info">
+				<div class="info-row">
+					<span class="info-label">Vendor:</span>
+					<span class="info-value">{{ doc.vendor_code }}</span>
+				</div>
+				<div class="info-row">
+					<span class="info-label">Part:</span>
+					<span class="info-value">{{ doc.part_code }}</span>
+				</div>
+				<div class="info-row">
+					<span class="info-label">Batch:</span>
+					<span class="info-value">{{ doc.batch_no }}</span>
+				</div>
+				<div class="info-row">
+					<span class="info-label">Exp:</span>
+					<span class="info-value">{{ doc.exp_date }}</span>
+				</div>
+				<div class="info-row">
+					<span class="info-label">Qty:</span>
+					<span class="info-value">{{ doc.qty }}</span>
+				</div>
+				<div class="barcode-string">
+					{{ doc.barcode_string }}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+	<script>
+		{% for doc in doc.get('items', [doc]) %}
+			const qrElement{{ loop.index }} = document.getElementById('qr-{{ loop.index }}');
+			new QRCode(qrElement{{ loop.index }}, {
+				text: "{{ doc.barcode_string }}",
+				width: 150,
+				height: 150,
+				colorDark: "#000000",
+				colorLight: "#ffffff",
+				correctLevel: QRCode.CorrectLevel.H
+			});
+		{% endfor %}
+
+		window.print();
+	</script>
+</body>
+</html> -->

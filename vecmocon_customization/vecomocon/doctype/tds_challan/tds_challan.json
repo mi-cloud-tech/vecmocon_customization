@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:challan_no",
+ "creation": "2026-02-09 13:51:46.555552",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "challan_details_section",
+  "challan_no",
+  "challan_date",
+  "bsr_code",
+  "column_break_01",
+  "company",
+  "bank_name",
+  "journal_entry",
+  "status",
+  "section_break_tds",
+  "tax_withholding_category",
+  "column_break_02",
+  "total_tds_amount",
+  "section_break_items",
+  "items",
+  "section_break_remarks",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "challan_details_section",
+   "fieldtype": "Section Break",
+   "label": "Challan Details"
+  },
+  {
+   "fieldname": "challan_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Challan Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "challan_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Challan Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bsr_code",
+   "fieldtype": "Data",
+   "label": "BSR Code"
+  },
+  {
+   "fieldname": "column_break_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Journal Entry",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Unpaid",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Unpaid\nPaid",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_tds",
+   "fieldtype": "Section Break",
+   "label": "TDS Summary"
+  },
+  {
+   "fieldname": "total_tds_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total TDS Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_02",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_withholding_category",
+   "fieldtype": "Link",
+   "label": "Tax Withholding Category",
+   "options": "Tax Withholding Category"
+  },
+  {
+   "fieldname": "section_break_items",
+   "fieldtype": "Section Break",
+   "label": "Invoice-wise TDS Breakup"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "TDS Challan Items",
+   "options": "TDS Challan Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_remarks",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "TDS Challan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Link",
+   "label": "Bank Name",
+   "options": "Bank Account"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-20 16:30:12.426216",
+ "modified_by": "Administrator",
+ "module": "Vecomocon",
+ "name": "TDS Challan",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

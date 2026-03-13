@@ -1,0 +1,46 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Purchase Order",
+  "enabled": 1,
+  "modified": "2026-01-08 17:28:38.565927",
+  "module": null,
+  "name": "Purchase Order",
+  "script": "frappe.ui.form.on(\"Purchase Order\", {\n    supplier(frm){\n        if (!frm.doc.tax_category){\n            set_tax_category(frm);   \n        }\n    },\n    custom_company_gst_state_no: function (frm) {\n        if (!frm.doc.tax_category){\n            set_tax_category(frm);   \n        }\n    },\n    custom_supplier_gst_state_no: function (frm) {\n        if(frm.doc.docstatus == 0){\n            if (!frm.doc.tax_category){\n                set_tax_category(frm);   \n            }\n        }\n    },\n    refresh: function (frm) {\n        if (frm.doc.custom_company_gst_state_no && frm.doc.custom_supplier_gst_state_no && frm.doc.docstatus == 0) {\n            set_tax_category(frm);\n        }\n    },\n    cost_center: function (frm) {\n        if (frm.doc.items) {\n            frm.doc.items.forEach(function (row) {\n                row.cost_center = frm.doc.cost_center;\n            });\n            frm.refresh_field('items');\n        }\n    }\n});\n\nfunction set_tax_category(frm) {\n    if (!frm.doc.gst_category) return;\n\n    if (frm.doc.gst_category === \"Unregistered\") {\n        frm.set_value(\"tax_category\", \"Intra-State Supply\");\n    } \n    else if (frm.doc.gst_category === \"Registered Regular\") {\n        if (frm.doc.custom_company_gst_state_no === frm.doc.custom_supplier_gst_state_no) {\n            frm.set_value(\"tax_category\", \"Intra-State Supply\");\n        } else {\n            frm.set_value(\"tax_category\", \"Inter-State Supply\");\n        }\n    }\n\n    frm.refresh_field(\"tax_category\");\n}\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 1,
+  "modified": "2026-01-08 17:23:14.983908",
+  "module": "Vecomocon",
+  "name": "Sales Order",
+  "script": "frappe.ui.form.on(\"Sales Order\", {\n    customer(frm){\n        set_tax_category(frm);\n    },\n    customer_address(frm){\n        if (!frm.doc.tax_category){\n            set_tax_category(frm);   \n        }\n    },\n    refresh(frm){\n        if(frm.doc.docstatus == 0){\n            if (!frm.doc.tax_category){\n                set_tax_category(frm);   \n            }\n        }\n    }\n});\n\nfunction set_tax_category(frm) {\n    if (!frm.doc.gst_category) return;\n\n    if (frm.doc.gst_category === \"Unregistered\") {\n        frm.set_value(\"tax_category\", \"Intra-State Supply\");\n    } \n    else if (frm.doc.gst_category === \"Registered Regular\") {\n        if (frm.doc.custom_customer_gst_state_no === frm.doc.custom_company_gst_state_no) {\n            frm.set_value(\"tax_category\", \"Intra-State Supply\");\n        } else {\n            frm.set_value(\"tax_category\", \"Inter-State Supply\");\n        }\n    }\n    frm.refresh_field(\"tax_category\");\n}\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "User",
+  "enabled": 1,
+  "modified": "2025-12-28 19:58:04.587792",
+  "module": "Vecomocon",
+  "name": "Hide Updates",
+  "script": "frappe.after_ajax(function () {\n    if (frappe.ui && frappe.ui.notifications) {\n        frappe.ui.notifications.show_update_notification = function () {\n            return;\n        };\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Customer",
+  "enabled": 1,
+  "modified": "2025-12-28 19:57:07.200316",
+  "module": "Vecomocon",
+  "name": "Customer Customization",
+  "script": "frappe.ui.form.on('Customer', {\n    setup(frm) {\n        frm.set_query(\"account_manager\", function () {\n            return {\n                query: \"frappe.core.doctype.user.user.user_query\",\n                filters: {\n                    role: \"Accounts Manager\"\n                }\n            };\n        });\n    }\n});\n",
+  "view": "Form"
+ }
+]

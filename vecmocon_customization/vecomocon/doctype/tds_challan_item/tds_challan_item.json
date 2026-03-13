@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-09 13:52:19.116488",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+    "purchase_invoice",
+    "supplier",
+    "supplier_name",
+    "column_break_01",
+    "invoice_amount",
+    "tds_category",
+    "tds_rate",
+    "tds_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Purchase Invoice",
+   "options": "Purchase Invoice",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier",
+   "options": "Supplier",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Invoice Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tds_category",
+   "fieldtype": "Link",
+   "label": "TDS Category",
+   "options": "Tax Withholding Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tds_rate",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "TDS Rate (%)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tds_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "TDS Amount",
+   "read_only": 1,
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-09 13:52:19.116488",
+ "modified_by": "Administrator",
+ "module": "Vecomocon",
+ "name": "TDS Challan Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

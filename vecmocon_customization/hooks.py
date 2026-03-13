@@ -40,10 +40,24 @@ app_license = "mit"
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
 # include js in page
-# page_js = {"page" : "public/js/file.js"}
+page_js = {
+	"barcode-generator": "public/js/barcode_generator.js"
+}
+
+# include js, css files in header of desk.html
+app_include_css = "/assets/vecmocon_customization/css/barcode_generator.css"
+app_include_js = "/assets/vecmocon_customization/js/barcode_scanner.js"
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Company": "public/js/company.js",
+    "Material Request" : "public/js/material_request.js",
+    "Payment Entry" : "public/js/payment_entry.js",
+    "Quality Inspection" : "public/js/quality_inspection.js",
+    "Purchase Receipt": "public/js/barcode_scanner.js",
+    "Stock Entry": "public/js/barcode_scanner.js",
+    "Delivery Note": "public/js/barcode_scanner.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -83,7 +97,7 @@ app_license = "mit"
 # ------------
 
 # before_install = "vecmocon_customization.install.before_install"
-# after_install = "vecmocon_customization.install.after_install"
+after_install = "vecmocon_customization.install.after_install"
 
 # Uninstallation
 # ------------
@@ -129,14 +143,19 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Stock Entry": "vecmocon_customization.override.stock_entry.CustomStockEntry"
+}
 
 # Document Events
 # ---------------
 # Hook on document methods and events
 
+# doc_events = {
+    
+# }
+
+# existing commented example kept for reference
 # doc_events = {
 # 	"*": {
 # 		"on_update": "method",
@@ -247,3 +266,76 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+doc_events = {
+    "Sales Order": {
+        "before_submit": "vecmocon_customization.override.sales_order.incoterm_customization_before_submit",
+        "before_insert": "vecmocon_customization.override.sales_order.incoterm_customization_before_insert",
+    },
+    "Delivery Note": {
+        "before_save": "vecmocon_customization.override.delivery_note.vehicle_number_regex",
+        "on_update_after_submit": "vecmocon_customization.override.delivery_note.on_update_after_submit",
+        "before_submit": "vecmocon_customization.override.delivery_note.custom_on_submit",
+        "validate": "vecmocon_customization.override.stock_validations.validate_delivery_note",
+    },
+    "Purchase Receipt": {
+        "before_insert": "vecmocon_customization.override.purchase_receipt.purchase_receipt_before_insert",
+        "before_save": "vecmocon_customization.override.purchase_receipt.purchase_receipt_before_save",
+        "validate": "vecmocon_customization.override.stock_validations.validate_purchase_receipt",
+        "before_submit": "vecmocon_customization.override.purchase_receipt.purchase_receipt_before_submit",
+        "on_submit": "vecmocon_customization.override.purchase_receipt.purchase_receipt_on_submit",
+    },
+    "Stock Entry": {
+        "validate": "vecmocon_customization.override.stock_validations.validate_stock_entry",
+        "before_submit": "vecmocon_customization.override.stock_entry.stock_entry_before_submit",
+    },
+    "Quality Inspection": {
+        "before_insert": "vecmocon_customization.override.quality_inspection.quality_inspection_before_insert",
+        "before_save": "vecmocon_customization.override.quality_inspection.quality_inspection_before_save",
+        "before_submit": "vecmocon_customization.override.quality_inspection.quality_inspection_before_submit",
+        "on_submit": "vecmocon_customization.override.quality_inspection.quality_inspection_on_submit",
+    },
+    "Purchase Invoice": {
+        "before_save": "vecmocon_customization.override.purchase_invoice.purchase_invoice_before_save",
+    },
+    "Purchase Order": {
+        "before_save": "vecmocon_customization.override.purchase_order.purchase_order_before_save",
+    },
+    "Material Request": {
+        "on_update_after_submit": "vecmocon_customization.override.material_request.material_request_on_update_after_submit",
+    },
+    "Payment Entry": {
+        "before_save": "vecmocon_customization.override.payment_entry.payment_entry_before_save",
+        "validate": "vecmocon_customization.override.payment_entry.validate_payment_entry",
+        "on_submit": "vecmocon_customization.override.payment_entry.on_submit",
+        "on_cancel": "vecmocon_customization.override.payment_entry.on_cancel",
+    }
+}
+
+fixtures = [
+    {
+        "dt": "Client Script",
+        "filters": [
+            ["name", "in", ["Customer Customization", "Hide Updates", "Purchase Receipt", "Purchase Order", "Sales Order"]]
+        ]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [
+            ["name", "in", ["Sales Order Item-customer_item_code-read_only"]]
+        ]
+    },
+    {
+        "dt": "Workflow",
+        "filters": [
+            ["name", "in", [
+                "Quanlity Inspection at Purchase Receipt", "Quality Inspection Workflow", "Supplier Onboarding Workflow"
+            ]]
+        ]
+    },
+    {
+        "dt": "Workflow State"
+    },
+    {
+        "dt": "Workflow Action"
+    }
+]

@@ -1,0 +1,30 @@
+{
+ "add_total_row": 1,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-02-09 15:31:39.268900",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letter_head": null,
+ "modified": "2026-02-09 15:31:39.268900",
+ "modified_by": "Administrator",
+ "module": "Vecomocon",
+ "name": "Challan Wise TDS Registor",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "TDS Challan",
+ "reference_report": "",
+ "report_name": "Challan Wise TDS Registor",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}
