@@ -1,6 +1,594 @@
 [
  {
   "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 16:49:36.519970",
+  "name": "eml6e5rcuj",
+  "permitted_roles": [
+   {
+    "parent": "eml6e5rcuj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00031",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 17:24:10.766716",
+  "name": "2ur4efgeia",
+  "permitted_roles": [
+   {
+    "parent": "2ur4efgeia",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00031",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 17:24:47.190479",
+  "name": "3a76g299i6",
+  "permitted_roles": [
+   {
+    "parent": "3a76g299i6",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00031-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-02-26 17:26:40.523240",
+  "name": "4dl4g6sjok",
+  "permitted_roles": [
+   {
+    "parent": "4dl4g6sjok",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00031-1",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Purchase Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-03 13:05:21.977811",
+  "name": "6239aie5d0",
+  "permitted_roles": [
+   {
+    "parent": "6239aie5d0",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "A.B.S Metal Label",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Purchase Engineer Approvel"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-03 13:06:18.870414",
+  "name": "6jsb8s78k4",
+  "permitted_roles": [
+   {
+    "parent": "6jsb8s78k4",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "A.B.S Metal Label",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-03 16:38:55.626505",
+  "name": "36c7tu5j5o",
+  "permitted_roles": [
+   {
+    "parent": "36c7tu5j5o",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00032",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-03 16:51:39.254183",
+  "name": "al065mlomp",
+  "permitted_roles": [
+   {
+    "parent": "al065mlomp",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00033",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-06 19:38:27.300136",
+  "name": "fkh5fenb5g",
+  "permitted_roles": [
+   {
+    "parent": "fkh5fenb5g",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00034",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-09 14:24:25.738808",
+  "name": "qshvbirel1",
+  "permitted_roles": [
+   {
+    "parent": "qshvbirel1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00032",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-09 14:26:44.336214",
+  "name": "s7rrcdka48",
+  "permitted_roles": [
+   {
+    "parent": "s7rrcdka48",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "A.B.S Metal Label",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-10 18:17:39.789027",
+  "name": "f9l2ecrkhi",
+  "permitted_roles": [
+   {
+    "parent": "f9l2ecrkhi",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00033",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-12 13:11:35.860954",
+  "name": "jeubkirjn0",
+  "permitted_roles": [
+   {
+    "parent": "jeubkirjn0",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Kaynes Technology",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Sourcing Manager Approvel"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Senior Sourcing Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-12 13:11:39.301337",
+  "name": "jg1epjvlhi",
+  "permitted_roles": [
+   {
+    "parent": "jg1epjvlhi",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Senior Sourcing Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Kaynes Technology",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending Senior Sourcing Manager Approval"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-13 13:35:08.077637",
+  "name": "d08fjk4doo",
+  "permitted_roles": [
+   {
+    "parent": "d08fjk4doo",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00035",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "geetanjali.sachdev@vecmocon.com",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-13 16:55:40.030590",
+  "name": "2g8qh99j7h",
+  "permitted_roles": [
+   {
+    "parent": "2g8qh99j7h",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00036",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-13 16:55:47.152678",
+  "name": "2ifmipsul3",
+  "permitted_roles": [
+   {
+    "parent": "2ifmipsul3",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00036",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 11:57:03.458625",
+  "name": "v9ae5qt7ec",
+  "permitted_roles": [
+   {
+    "parent": "v9ae5qt7ec",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2025-00045",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "himanshu@vecmocon.com",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 12:25:59.760871",
+  "name": "g7to2q82tu",
+  "permitted_roles": [
+   {
+    "parent": "g7to2q82tu",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2025-00047",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 12:26:03.459671",
+  "name": "g92mq4nihi",
+  "permitted_roles": [
+   {
+    "parent": "g92mq4nihi",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2025-00047",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "himanshu@vecmocon.com",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 12:31:00.525683",
+  "name": "j5t5ro0725",
+  "permitted_roles": [
+   {
+    "parent": "j5t5ro0725",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2025-00048",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 12:31:02.889345",
+  "name": "j6kd5nflmh",
+  "permitted_roles": [
+   {
+    "parent": "j6kd5nflmh",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2025-00048",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": "himanshu@vecmocon.com",
+  "completed_by_role": "Quality Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 12:33:10.805759",
+  "name": "kekllm6p2a",
+  "permitted_roles": [
+   {
+    "parent": "kekllm6p2a",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2025-00049",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 12:33:18.784694",
+  "name": "kh3cqanfjg",
+  "permitted_roles": [
+   {
+    "parent": "kh3cqanfjg",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2025-00049",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Quality Inspection Completed"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 12:34:41.328735",
+  "name": "latiijvsh1",
+  "permitted_roles": [
+   {
+    "parent": "latiijvsh1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2025-00062",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 12:48:26.334923",
+  "name": "tcn6a3gbjq",
+  "permitted_roles": [
+   {
+    "parent": "tcn6a3gbjq",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00037",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-14 12:51:16.967428",
+  "name": "v21hg8coua",
+  "permitted_roles": [
+   {
+    "parent": "v21hg8coua",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00038",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2026-03-16 11:15:50.588693",
+  "name": "ukhj4eo90l",
+  "permitted_roles": [
+   {
+    "parent": "ukhj4eo90l",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Quality Manager"
+   }
+  ],
+  "reference_doctype": "Quality Inspection",
+  "reference_name": "MAT-QA-2026-00039",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending For Quality Inspection"
+ },
+ {
+  "completed_by": "Administrator",
   "completed_by_role": "Purchase User",
   "docstatus": 0,
   "doctype": "Workflow Action",
