@@ -125,7 +125,7 @@ class CustomStockEntry(StockEntry):
                         )
                     ).run()[0][0] or 0
 
-                if flt(total_supplied - total_returned, precision) > flt(total_allowed, precision):
+                if flt(total_supplied - total_returned, precision) > flt(total_allowed, precision) and not custom_over_transfer_allowance:
                     frappe.throw(
                         _("Row {0}# Item {1} cannot be transferred more than {2} against {3} {4}").format(
                             se_item.idx,

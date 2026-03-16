@@ -55,8 +55,12 @@ def purchase_receipt_on_submit(doc, method):
         if not due_date:
             continue
 
-        # Check if QI already exists for this PR item
-        existing_qi = frappe.db.exists("Quality Inspection", {"reference_type": "Purchase Receipt", "reference_name": doc.name, "item_code": i.item_code})
+        # Check if QI already exists for this specific PR item row
+        existing_qi = frappe.db.exists("Quality Inspection", {
+            "reference_type": "Purchase Receipt",
+            "reference_name": doc.name,
+            "child_row_reference": i.name,
+        })
         if existing_qi:
             continue
 
@@ -73,5 +77,11 @@ def purchase_receipt_on_submit(doc, method):
         qi.custom_due_date = due_date
         qi.company = doc.company
         qi.inspected_by = doc.owner
+
+        # # Set Batch No and Serial No from Purchase Receipt Item
+        # if i.batch_no:
+        #     qi.batch_no = i.batch_no
+        # if i.serial_no:
+        #     qi.item_serial_no = i.serial_no.strip().split("\n")[0]
+
         qi.insert(ignore_permissions=True)
-        qi_created = True

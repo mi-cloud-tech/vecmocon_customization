@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "creation": "2025-03-14 00:00:00.000000",
+ "default_view": "List",
+ "docstatus": 0,
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "barcode_section",
+  "code_type",
+  "subcontracting_section",
+  "allow_manual_consumed_qty_edit"
+ ],
+ "fields": [
+  {
+   "fieldname": "barcode_section",
+   "fieldtype": "Section Break",
+   "label": "Barcode / QR Code Settings"
+  },
+  {
+   "default": "Barcode",
+   "fieldname": "code_type",
+   "fieldtype": "Select",
+   "label": "Code Type",
+   "options": "Barcode\nQR Code",
+   "reqd": 1,
+   "description": "Select whether to generate 1D Barcode (Code128) or 2D QR Code"
+  },
+  {
+   "fieldname": "subcontracting_section",
+   "fieldtype": "Section Break",
+   "label": "Subcontracting Settings"
+  },
+  {
+   "default": "0",
+   "description": "If enabled, users can manually edit Consumed Qty in Subcontracting Receipt and the value will not be overwritten on save.",
+   "fieldname": "allow_manual_consumed_qty_edit",
+   "fieldtype": "Check",
+   "label": "Allow Manual Consumed Quantity Edit"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-03-14 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Vecomocon",
+ "name": "Vecmocon Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "print": 0,
+   "read": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

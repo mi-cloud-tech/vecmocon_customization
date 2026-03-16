@@ -39,11 +39,6 @@ app_license = "mit"
 # webform_include_js = {"doctype": "public/js/doctype.js"}
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
-# include js in page
-page_js = {
-	"barcode-generator": "public/js/barcode_generator.js"
-}
-
 # include js, css files in header of desk.html
 app_include_css = "/assets/vecmocon_customization/css/barcode_generator.css"
 app_include_js = "/assets/vecmocon_customization/js/barcode_scanner.js"
@@ -51,12 +46,10 @@ app_include_js = "/assets/vecmocon_customization/js/barcode_scanner.js"
 # include js in doctype views
 doctype_js = {
     "Company": "public/js/company.js",
-    "Material Request" : "public/js/material_request.js",
-    "Payment Entry" : "public/js/payment_entry.js",
-    "Quality Inspection" : "public/js/quality_inspection.js",
-    "Purchase Receipt": "public/js/barcode_scanner.js",
-    "Stock Entry": "public/js/barcode_scanner.js",
-    "Delivery Note": "public/js/barcode_scanner.js"
+    "Material Request": "public/js/material_request.js",
+    "Payment Entry": "public/js/payment_entry.js",
+    "Quality Inspection": "public/js/quality_inspection.js",
+    "Subcontracting Receipt": "public/js/subcontracting_receipt.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -192,7 +185,11 @@ override_doctype_class = {
 
 # Overriding Methods
 # ------------------------------
-#
+
+override_whitelisted_methods = {
+	"erpnext.stock.utils.scan_barcode": "vecmocon_customization.override.barcode_api.custom_scan_barcode"
+}
+
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "vecmocon_customization.event.get_events"
 # }
@@ -308,7 +305,11 @@ doc_events = {
         "validate": "vecmocon_customization.override.payment_entry.validate_payment_entry",
         "on_submit": "vecmocon_customization.override.payment_entry.on_submit",
         "on_cancel": "vecmocon_customization.override.payment_entry.on_cancel",
-    }
+    },
+    "Subcontracting Receipt": {
+        "before_validate": "vecmocon_customization.override.subcontracting_receipt.before_validate",
+        "validate": "vecmocon_customization.override.subcontracting_receipt.validate",
+    },
 }
 
 fixtures = [
@@ -321,7 +322,19 @@ fixtures = [
     {
         "dt": "Property Setter",
         "filters": [
-            ["name", "in", ["Sales Order Item-customer_item_code-read_only"]]
+            ["name", "in", [
+                "Sales Order Item-customer_item_code-read_only",
+                "Quality Inspection-custom_due_date-depends_on",
+                "Quality Inspection-custom_accetped_qty-depends_on",
+                "Quality Inspection-custom_rejected_qty-depends_on",
+                "Quality Inspection-custom_warehouse-depends_on",
+                "Quality Inspection-custom_accetped_warehouse-depends_on",
+                "Quality Inspection-custom_source_warehouse-depends_on",
+                "Quality Inspection-custom_submitted_date-depends_on",
+                "Quality Inspection-custom_delay_days-depends_on",
+                "Quality Inspection-custom_rejected_status-depends_on",
+                "Quality Inspection-custom_rejected_decision_date-depends_on"
+            ]]
         ]
     },
     {
