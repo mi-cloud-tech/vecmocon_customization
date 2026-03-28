@@ -89,6 +89,59 @@
 
 		let frm = scanner.frm;
 		let child_table = scanner.items_table_name || 'items';
+		
+		let items = frm.doc[child_table] || [];
+		let matched_row = items.find(row => {
+			return (
+				row.item_code === data.item_code &&
+				row.batch_no === data.batch_no &&
+				row.serial_no === data.serial_no
+			);
+		});
+
+		// ✅ Case A: Serial match found → DO NOTHING
+		if (matched_row) {
+			frappe.show_alert({
+				message: __('Duplicate Serial No: {0}', [data.serial_no]),
+				indicator: 'orange'
+			}, 5);
+
+			frappe.flags.hide_serial_batch_dialog = false;
+			frappe.flags.trigger_from_barcode_scanner = false;
+
+			resolve(matched_row);
+			return;
+		}
+
+		let matched_row_wo_serial = items.find(row => {
+			return (
+				row.item_code === data.item_code &&
+				row.batch_no === data.batch_no
+			);
+		});
+		if (matched_row_wo_serial){
+			let new_qty = flt(matched_row_wo_serial.qty) + (data.qty || 1);
+			let new_serial = (matched_row_wo_serial.serial_no || "") + "\n" + data.serial_no;
+
+			frappe.model.set_value(matched_row_wo_serial.doctype, matched_row_wo_serial.name, 'qty', new_qty);
+			frappe.model.set_value(matched_row_wo_serial.doctype, matched_row_wo_serial.name, 'serial_no', new_serial);
+			frm.refresh_field(child_table);
+
+			frappe.show_alert({
+				message: __('Updated Serial No. & Qty: {0} → {1}', [
+					data.item_code,
+					new_qty
+				]),
+				indicator: 'green'
+			}, 5);
+
+			frappe.flags.hide_serial_batch_dialog = false;
+			frappe.flags.trigger_from_barcode_scanner = false;
+
+			resolve(matched_row);
+			return;
+		}
+
 		let row = frm.add_child(child_table);
 
 		// Set item_code first — triggers ERPNext's item detail fetch (rate, UOM, etc.)

@@ -45,6 +45,7 @@ app_include_js = "/assets/vecmocon_customization/js/barcode_scanner.js"
 
 # include js in doctype views
 doctype_js = {
+    "Purchase Receipt": "public/js/purchase_receipt.js",
     "Company": "public/js/company.js",
     "Material Request": "public/js/material_request.js",
     "Payment Entry": "public/js/payment_entry.js",
@@ -350,5 +351,12 @@ fixtures = [
     },
     {
         "dt": "Workflow Action"
-    }
+    },
+    {
+        "dt": "Print Format",
+        "filters": [
+            ["name", "in", ["Purchase Order", "Purchase Receipt", "Purchase Invoice", "Tax-Invoice", "Delivery Challan", 
+            "Delivery Challan Without Values", "Goods Sales Order", "Services Sales Order"]]
+        ]
+    },
 ]
