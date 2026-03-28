@@ -4,6 +4,27 @@
   "completed_by_role": null,
   "docstatus": 0,
   "doctype": "Workflow Action",
+  "modified": "2026-03-14 09:29:37.528711",
+  "name": "8sv09i09f8",
+  "permitted_roles": [
+   {
+    "parent": "8sv09i09f8",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Purchase Manager"
+   }
+  ],
+  "reference_doctype": "Supplier",
+  "reference_name": "Testing Barcode",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending Purchase Engineer Approvel"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
   "modified": "2026-03-17 11:38:04.018395",
   "name": "nd8ss1oag9",
   "permitted_roles": [
