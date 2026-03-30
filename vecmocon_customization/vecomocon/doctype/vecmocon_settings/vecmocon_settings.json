@@ -7,26 +7,10 @@
  "document_type": "Setup",
  "engine": "InnoDB",
  "field_order": [
-  "barcode_section",
-  "code_type",
   "subcontracting_section",
   "allow_manual_consumed_qty_edit"
  ],
  "fields": [
-  {
-   "fieldname": "barcode_section",
-   "fieldtype": "Section Break",
-   "label": "Barcode / QR Code Settings"
-  },
-  {
-   "default": "Barcode",
-   "fieldname": "code_type",
-   "fieldtype": "Select",
-   "label": "Code Type",
-   "options": "Barcode\nQR Code",
-   "reqd": 1,
-   "description": "Select whether to generate 1D Barcode (Code128) or 2D QR Code"
-  },
   {
    "fieldname": "subcontracting_section",
    "fieldtype": "Section Break",

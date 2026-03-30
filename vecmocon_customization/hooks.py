@@ -39,10 +39,6 @@ app_license = "mit"
 # webform_include_js = {"doctype": "public/js/doctype.js"}
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
-# include js, css files in header of desk.html
-app_include_css = "/assets/vecmocon_customization/css/barcode_generator.css"
-app_include_js = "/assets/vecmocon_customization/js/barcode_scanner.js"
-
 # include js in doctype views
 doctype_js = {
     "Purchase Receipt": "public/js/purchase_receipt.js",
@@ -187,9 +183,9 @@ override_doctype_class = {
 # Overriding Methods
 # ------------------------------
 
-override_whitelisted_methods = {
-	"erpnext.stock.utils.scan_barcode": "vecmocon_customization.override.barcode_api.custom_scan_barcode"
-}
+# override_whitelisted_methods = {
+# 	"frappe.desk.doctype.event.event.get_events": "vecmocon_customization.event.get_events"
+# }
 
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "vecmocon_customization.event.get_events"
