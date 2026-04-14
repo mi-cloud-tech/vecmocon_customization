@@ -2433,7 +2433,7 @@
    }
   ],
   "reference_doctype": "Supplier",
-  "reference_name": "&T Switchgear Limited",
+  "reference_name": "L&T Switchgear Limited New TEST",
   "status": "Completed",
   "user": null,
   "workflow_state": "Pending Sourcing Manager Approvel"
@@ -2580,7 +2580,7 @@
    }
   ],
   "reference_doctype": "Supplier",
-  "reference_name": "&T Switchgear Limited",
+  "reference_name": "L&T Switchgear Limited New TEST",
   "status": "Completed",
   "user": null,
   "workflow_state": "Pending Senior Sourcing Manager Approval"
