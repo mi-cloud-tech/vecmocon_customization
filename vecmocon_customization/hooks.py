@@ -352,7 +352,8 @@ fixtures = [
         "dt": "Print Format",
         "filters": [
             ["name", "in", ["Purchase Order", "Purchase Receipt", "Purchase Invoice", "Tax-Invoice", "Delivery Challan", 
-            "Delivery Challan Without Values", "Goods Sales Order", "Services Sales Order", "SE Delivery Challan", "SE Delivery Challan Without Values"]]
+            "Delivery Challan Without Values", "Goods Sales Order", "Services Sales Order", "SE Delivery Challan", "SE Delivery Challan Without Values",
+            "Material Transfer Without Value", "Material Transfer With Value"]]
         ]
     },
 ]
