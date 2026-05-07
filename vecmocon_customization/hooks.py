@@ -134,7 +134,8 @@ after_install = "vecmocon_customization.install.after_install"
 # Override standard doctype classes
 
 override_doctype_class = {
-	"Stock Entry": "vecmocon_customization.override.stock_entry.CustomStockEntry"
+	"Stock Entry": "vecmocon_customization.override.stock_entry.CustomStockEntry",
+	"Purchase Receipt": "vecmocon_customization.override.purchase_receipt.CustomPurchaseReceipt"
 }
 
 # Document Events
@@ -264,6 +265,7 @@ doc_events = {
     "Sales Order": {
         "before_submit": "vecmocon_customization.override.sales_order.incoterm_customization_before_submit",
         "before_insert": "vecmocon_customization.override.sales_order.incoterm_customization_before_insert",
+        "before_save": "vecmocon_customization.override.sales_order.custom_before_save",
     },
     "Delivery Note": {
         "before_save": "vecmocon_customization.override.delivery_note.vehicle_number_regex",
@@ -330,7 +332,8 @@ fixtures = [
                 "Quality Inspection-custom_submitted_date-depends_on",
                 "Quality Inspection-custom_delay_days-depends_on",
                 "Quality Inspection-custom_rejected_status-depends_on",
-                "Quality Inspection-custom_rejected_decision_date-depends_on"
+                "Quality Inspection-custom_rejected_decision_date-depends_on",
+                "Purchase Receipt Item-purchase_order-read_only"
             ]]
         ]
     },

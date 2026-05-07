@@ -11,3 +11,7 @@ def incoterm_customization_before_insert(self, method):
         default_incoterm = frappe.get_doc("Customer", self.customer).custom_default_incoterm
         if default_incoterm:
             self.incoterm = default_incoterm
+
+def custom_before_save(doc, method):
+    if doc.company_address:
+        doc.letter_head = frappe.db.get_value("Address", doc.company_address, "custom_letter_head") or doc.letter_head

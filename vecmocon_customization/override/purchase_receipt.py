@@ -11,6 +11,10 @@ def purchase_receipt_before_insert(doc, method):
             i.custom_quality_inspection_due_date = add_days(doc.posting_date, 3)
 
 def purchase_receipt_before_save(doc, method):
+    for i in doc.items:
+        if i.purchase_order and not i.purchase_order_item:
+            i.purchase_order_item = frappe.db.get_value("Purchase Order Item",{"parent": i.purchase_order,"item_code": i.item_code},"name")
+
     if doc.is_return:
         return
 
@@ -78,10 +82,15 @@ def purchase_receipt_on_submit(doc, method):
         qi.company = doc.company
         qi.inspected_by = doc.owner
 
-        # # Set Batch No and Serial No from Purchase Receipt Item
-        # if i.batch_no:
-        #     qi.batch_no = i.batch_no
-        # if i.serial_no:
-        #     qi.item_serial_no = i.serial_no.strip().split("\n")[0]
-
         qi.insert(ignore_permissions=True)
+
+import frappe
+from frappe import _
+from erpnext.stock.doctype.purchase_receipt.purchase_receipt import PurchaseReceipt
+
+class CustomPurchaseReceipt(PurchaseReceipt):
+	def po_required(self):
+		if frappe.db.get_single_value("Buying Settings", "po_required") == "Yes":
+			for d in self.get("items", []):
+				if not d.get("purchase_order"):
+					frappe.throw(_("Row {0}: Purchase Order is required for Item {1}").format(d.idx, d.item_code))
