@@ -12,6 +12,9 @@ def quality_inspection_before_insert(doc, method):
 def quality_inspection_before_save(doc, method):
     if doc.reference_type != "Purchase Receipt":
         return
+    
+    if doc.child_row_reference:
+        doc.custom_source_warehouse = frappe.db.get_value("Purchase Receipt Item", doc.child_row_reference, "warehouse")
 
     if doc.child_row_reference and not doc.custom_due_date:
         row = frappe.db.get_value("Purchase Receipt Item", doc.child_row_reference, "custom_quality_inspection_due_date", as_dict=True)
@@ -79,6 +82,26 @@ def quality_inspection_on_submit(doc, method):
     stock_entry.custom_quality_inspection = doc.name
     stock_entry.insert()
     stock_entry.submit()
+
+def quality_inspection_on_cancel(doc, method):
+    if doc.reference_type != "Purchase Receipt":
+        return
+
+    # Find submitted Stock Entry created from this Quality Inspection
+    stock_entries = frappe.get_all(
+        "Stock Entry",
+        filters={
+            "custom_quality_inspection": doc.name,
+            "docstatus": 1
+        },
+        pluck="name"
+    )
+
+    for se_name in stock_entries:
+        stock_entry = frappe.get_doc("Stock Entry", se_name)
+        if stock_entry.docstatus == 1:
+            stock_entry.cancel()
+            frappe.msgprint(f"Stock Entry {se_name} cancelled successfully.")
 
 # def quality_inspection_on_submit(doc, method):
 #     if doc.reference_type != "Purchase Receipt":

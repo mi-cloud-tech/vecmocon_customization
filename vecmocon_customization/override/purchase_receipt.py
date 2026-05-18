@@ -15,6 +15,9 @@ def purchase_receipt_before_save(doc, method):
         if i.purchase_order and not i.purchase_order_item:
             i.purchase_order_item = frappe.db.get_value("Purchase Order Item",{"parent": i.purchase_order,"item_code": i.item_code},"name")
 
+    if doc.child_row_reference:
+        doc.custom_source_warehouse = frappe.db.get_value("Purchase Receipt Item", doc.child_row_reference, "warehouse")
+
     if doc.is_return:
         return
 
