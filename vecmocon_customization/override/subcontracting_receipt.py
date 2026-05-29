@@ -29,28 +29,18 @@ def validate(doc, method):
 	if not manual_qtys:
 		return
 
+	changed = False
 	for row in doc.supplied_items:
 		key = (row.rm_item_code, row.reference_name)
 		if key in manual_qtys:
 			row.consumed_qty = flt(manual_qtys[key], row.precision("consumed_qty"))
-			row.amount = flt(row.consumed_qty * row.rate, row.precision("amount"))
+			changed = True
 
-	# Recalculate rm_supp_cost on parent items
-	rm_cost_map = {}
-	for row in doc.supplied_items:
-		rm_cost_map.setdefault(row.reference_name, 0)
-		rm_cost_map[row.reference_name] += flt(row.amount)
-
-	for item in doc.items:
-		if not item.is_scrap_item and item.name in rm_cost_map and item.qty:
-			item.rm_supp_cost = rm_cost_map[item.name]
-			item.rm_cost_per_qty = item.rm_supp_cost / item.qty
-			item.rate = (
-				flt(item.rm_cost_per_qty)
-				+ flt(item.service_cost_per_qty)
-				+ flt(item.additional_cost_per_qty)
-				- flt(item.scrap_cost_per_qty)
-			)
-			item.amount = flt(item.qty) * flt(item.rate)
+	if changed:
+		# Let ERPNext recompute everything downstream from the restored consumed_qty:
+		# per-row amount, items' rm_supp_cost / rm_cost_per_qty / rate / amount,
+		# additional_cost_per_qty (when distributed by Amount), and parent total / total_qty.
+		doc.calculate_additional_costs()
+		doc.calculate_items_qty_and_amount()
 
 	del doc._manual_consumed_qtys
