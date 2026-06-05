@@ -281,6 +281,7 @@ doc_events = {
         "on_submit": "vecmocon_customization.override.purchase_receipt.purchase_receipt_on_submit",
     },
     "Stock Entry": {
+        "before_save": "vecmocon_customization.override.stock_validations.stock_entry_before_save",
         "validate": "vecmocon_customization.override.stock_validations.validate_stock_entry",
         "before_submit": "vecmocon_customization.override.stock_entry.stock_entry_before_submit",
     },
