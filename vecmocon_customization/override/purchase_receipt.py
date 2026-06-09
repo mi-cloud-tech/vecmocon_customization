@@ -11,10 +11,12 @@ def purchase_receipt_before_insert(doc, method):
             i.custom_quality_inspection_due_date = add_days(doc.posting_date, 3)
 
 def purchase_receipt_before_save(doc, method):
+    validate_hsn_code(doc)
+
     for i in doc.items:
         if i.purchase_order and not i.purchase_order_item:
             i.purchase_order_item = frappe.db.get_value("Purchase Order Item",{"parent": i.purchase_order,"item_code": i.item_code},"name")
-            
+
     if doc.is_return:
         return
 
@@ -30,6 +32,20 @@ def purchase_receipt_before_save(doc, method):
                     i.warehouse = default_quality_warehouse
                 else:
                     frappe.throw(f"Item {i.item_code} requires quality inspection but no default quality warehouse is set in Company settings.")
+
+def validate_hsn_code(doc):
+    """Ensure the entered custom_hsn_code matches the item's GST HSN Code."""
+    for i in doc.items:
+        if not i.custom_hsn_code:
+            continue
+
+        item_hsn_code = frappe.db.get_value("Item", i.item_code, "gst_hsn_code")
+        if item_hsn_code and i.custom_hsn_code != item_hsn_code:
+            item_link = f'<a href="/app/item/{i.item_code}"><b>{i.item_code}</b></a>'
+            frappe.throw(
+                f"Row {i.idx}: HSN Code {i.custom_hsn_code} does not match the GST HSN Code "
+                f"{item_hsn_code} of Item {item_link}."
+            )
 
 def purchase_receipt_before_submit(doc, method):
     """Ensure all items requiring quality inspection have due dates and quality warehouses."""
