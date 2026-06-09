@@ -18,6 +18,12 @@ def execute(filters=None):
 	# Add custom voucher columns after the standard columns
 	custom_columns = [
 		{
+			"label": _("GL Created By"),
+			"fieldname": "gl_created_by",
+			"fieldtype": "Data",
+			"width": 180,
+		},
+		{
 			"label": _("Voucher Created By"),
 			"fieldname": "voucher_created_by",
 			"fieldtype": "Data",
@@ -54,6 +60,9 @@ def execute(filters=None):
 	# Fetch voucher details (owner, creation, submitted_by)
 	voucher_details = get_voucher_details(voucher_map)
 
+	gl_owners = get_gl_entry_owners(voucher_map)
+	owner_full_names = get_user_full_names(gl_owners.values())
+
 	# Enrich each data row with voucher details
 	for row in data:
 		voucher_type = row.get("voucher_type")
@@ -61,11 +70,14 @@ def execute(filters=None):
 		if voucher_type and voucher_no:
 			key = (voucher_type, voucher_no)
 			details = voucher_details.get(key, {})
+			gl_owner = gl_owners.get(key, "")
+			row["gl_created_by"] = owner_full_names.get(gl_owner, gl_owner)
 			row["voucher_created_by"] = details.get("owner", "")
 			row["voucher_created_on"] = details.get("creation", "")
 			row["voucher_submitted_by"] = details.get("submitted_by", "")
 		else:
 			# Opening / Total / Closing rows - leave blank
+			row["gl_created_by"] = ""
 			row["voucher_created_by"] = ""
 			row["voucher_created_on"] = ""
 			row["voucher_submitted_by"] = ""
@@ -156,6 +168,63 @@ def get_voucher_details(voucher_map):
 			continue
 
 	return voucher_details
+
+
+def get_gl_entry_owners(voucher_map):
+	if not voucher_map:
+		return {}
+
+	# Group voucher numbers by voucher type
+	type_vouchers = {}
+	for voucher_type, voucher_no in voucher_map:
+		type_vouchers.setdefault(voucher_type, []).append(voucher_no)
+
+	owners = {}
+
+	for voucher_type, voucher_nos in type_vouchers.items():
+		try:
+			results = frappe.db.sql(
+				"""
+				SELECT voucher_type, voucher_no, owner
+				FROM `tabGL Entry`
+				WHERE voucher_type = %(voucher_type)s
+					AND voucher_no IN %(voucher_nos)s
+			""",
+				{"voucher_type": voucher_type, "voucher_nos": voucher_nos},
+				as_dict=1,
+			)
+
+			for r in results:
+				key = (r.voucher_type, r.voucher_no)
+				if key not in owners:
+					owners[key] = r.owner
+
+		except Exception:
+			continue
+
+	return owners
+
+
+def get_user_full_names(users):
+	"""Return a mapping of user id (email) -> full name.
+
+	Falls back to the user id itself when no full name is set.
+	"""
+	users = list({u for u in users if u})
+	if not users:
+		return {}
+
+	results = frappe.db.sql(
+		"""
+		SELECT name, full_name
+		FROM `tabUser`
+		WHERE name IN %(users)s
+	""",
+		{"users": users},
+		as_dict=1,
+	)
+
+	return {r.name: (r.full_name or r.name) for r in results}
 
 
 def get_submitted_by_from_version(doctype, docname):
