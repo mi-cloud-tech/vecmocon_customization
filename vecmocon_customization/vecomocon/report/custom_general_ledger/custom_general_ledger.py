@@ -41,6 +41,16 @@ def execute(filters=None):
 			"fieldtype": "Data",
 			"width": 180,
 		},
+		{"label": _("Sales Order Number"), "fieldname": "so_number", "fieldtype": "Data", "width": 160},
+		{"label": _("Sales Order Date"), "fieldname": "so_date", "fieldtype": "Date", "width": 120},
+		{"label": _("CN Number"), "fieldname": "cn_number", "fieldtype": "Data", "width": 160},
+		{"label": _("CN Date"), "fieldname": "cn_date", "fieldtype": "Date", "width": 120},
+		{"label": _("Purchase Order Number"), "fieldname": "po_number", "fieldtype": "Data", "width": 160},
+		{"label": _("Purchase Order Date"), "fieldname": "po_date", "fieldtype": "Date", "width": 120},
+		{"label": _("Purchase Receipt Number"), "fieldname": "pr_number", "fieldtype": "Data", "width": 160},
+		{"label": _("Purchase Receipt Date"), "fieldname": "pr_date", "fieldtype": "Date", "width": 120},
+		{"label": _("DN Number"), "fieldname": "dn_number", "fieldtype": "Data", "width": 160},
+		{"label": _("DN Date"), "fieldname": "dn_date", "fieldtype": "Date", "width": 120},
 	]
 	columns.extend(custom_columns)
 
@@ -63,6 +73,21 @@ def execute(filters=None):
 	gl_owners = get_gl_entry_owners(voucher_map)
 	owner_full_names = get_user_full_names(gl_owners.values())
 
+	reference_details = get_reference_details(voucher_map)
+
+	reference_fields = (
+		"so_number",
+		"so_date",
+		"cn_number",
+		"cn_date",
+		"po_number",
+		"po_date",
+		"pr_number",
+		"pr_date",
+		"dn_number",
+		"dn_date",
+	)
+
 	# Enrich each data row with voucher details
 	for row in data:
 		voucher_type = row.get("voucher_type")
@@ -75,14 +100,171 @@ def execute(filters=None):
 			row["voucher_created_by"] = details.get("owner", "")
 			row["voucher_created_on"] = details.get("creation", "")
 			row["voucher_submitted_by"] = details.get("submitted_by", "")
+
+			refs = reference_details.get(key, {})
+			for field in reference_fields:
+				row[field] = refs.get(field, "")
 		else:
 			# Opening / Total / Closing rows - leave blank
 			row["gl_created_by"] = ""
 			row["voucher_created_by"] = ""
 			row["voucher_created_on"] = ""
 			row["voucher_submitted_by"] = ""
+			for field in reference_fields:
+				row[field] = ""
 
 	return columns, data
+
+
+def get_reference_details(voucher_map):
+	if not voucher_map:
+		return {}
+
+	# Group voucher numbers by type for batched queries.
+	type_vouchers = {}
+	for voucher_type, voucher_no in voucher_map:
+		type_vouchers.setdefault(voucher_type, []).append(voucher_no)
+
+	# voucher key -> {ref_kind: set(linked names)}
+	links = {}
+
+	def add_link(key, ref_kind, name):
+		if name:
+			links.setdefault(key, {}).setdefault(ref_kind, set()).add(name)
+
+	# --- Sales Order links ---
+	for parent, so in get_child_links(type_vouchers.get("Sales Invoice"), "Sales Invoice Item", "sales_order"):
+		add_link(("Sales Invoice", parent), "so", so)
+	for parent, so in get_child_links(type_vouchers.get("Delivery Note"), "Delivery Note Item", "against_sales_order"):
+		add_link(("Delivery Note", parent), "so", so)
+	for so in type_vouchers.get("Sales Order", []):
+		add_link(("Sales Order", so), "so", so)
+
+	# --- Purchase Order links ---
+	for parent, po in get_child_links(type_vouchers.get("Purchase Invoice"), "Purchase Invoice Item", "purchase_order"):
+		add_link(("Purchase Invoice", parent), "po", po)
+	for parent, po in get_child_links(type_vouchers.get("Purchase Receipt"), "Purchase Receipt Item", "purchase_order"):
+		add_link(("Purchase Receipt", parent), "po", po)
+	for po in type_vouchers.get("Purchase Order", []):
+		add_link(("Purchase Order", po), "po", po)
+
+	# --- Purchase Receipt links ---
+	for pr in type_vouchers.get("Purchase Receipt", []):
+		add_link(("Purchase Receipt", pr), "pr", pr)
+	for parent, pr in get_child_links(type_vouchers.get("Purchase Invoice"), "Purchase Invoice Item", "purchase_receipt"):
+		add_link(("Purchase Invoice", parent), "pr", pr)
+
+	# --- Delivery Note links ---
+	for dn in type_vouchers.get("Delivery Note", []):
+		add_link(("Delivery Note", dn), "dn", dn)
+	for parent, dn in get_child_links(type_vouchers.get("Sales Invoice"), "Sales Invoice Item", "delivery_note"):
+		add_link(("Sales Invoice", parent), "dn", dn)
+
+	# Collect all referenced documents per type so dates can be fetched in bulk.
+	names_by_doctype = {}
+	for ref_links in links.values():
+		for ref_kind, names in ref_links.items():
+			doctype = REFERENCE_DOCTYPE[ref_kind]
+			names_by_doctype.setdefault(doctype, set()).update(names)
+
+	dates = {}
+	for doctype, names in names_by_doctype.items():
+		date_field = REFERENCE_DATE_FIELD[doctype]
+		dates[doctype] = get_document_dates(doctype, names, date_field)
+
+	# Credit Notes: Sales Invoices that are returns.
+	cn_dates = get_credit_note_dates(type_vouchers.get("Sales Invoice"))
+
+	details = {}
+	for key, ref_links in links.items():
+		row_details = {}
+		for ref_kind, names in ref_links.items():
+			doctype = REFERENCE_DOCTYPE[ref_kind]
+			ordered = sorted(names)
+			doc_dates = dates.get(doctype, {})
+			distinct_dates = sorted({doc_dates[n] for n in ordered if doc_dates.get(n)})
+			row_details[f"{ref_kind}_number"] = ", ".join(ordered)
+			row_details[f"{ref_kind}_date"] = distinct_dates[0] if len(distinct_dates) == 1 else ""
+		details[key] = row_details
+
+	# Overlay Credit Note details (keyed on the Sales Invoice itself).
+	for key, cn in cn_dates.items():
+		details.setdefault(key, {})
+		details[key]["cn_number"] = cn["cn_number"]
+		details[key]["cn_date"] = cn["cn_date"]
+
+	return details
+
+
+REFERENCE_DOCTYPE = {
+	"so": "Sales Order",
+	"po": "Purchase Order",
+	"pr": "Purchase Receipt",
+	"dn": "Delivery Note",
+}
+
+REFERENCE_DATE_FIELD = {
+	"Sales Order": "transaction_date",
+	"Purchase Order": "transaction_date",
+	"Purchase Receipt": "posting_date",
+	"Delivery Note": "posting_date",
+}
+
+
+def get_child_links(parents, child_doctype, field):
+	if not parents:
+		return
+
+	rows = frappe.db.sql(
+		"""
+		SELECT parent, {field} AS value
+		FROM `tab{child}`
+		WHERE parent IN %(parents)s
+			AND IFNULL({field}, '') != ''
+	""".format(child=child_doctype, field=field),
+		{"parents": parents},
+		as_dict=1,
+	)
+	for r in rows:
+		yield r.parent, r.value
+
+
+def get_document_dates(doctype, names, date_field):
+	names = list({n for n in names if n})
+	if not names:
+		return {}
+
+	rows = frappe.db.sql(
+		"""
+		SELECT name, {date_field} AS doc_date
+		FROM `tab{doctype}`
+		WHERE name IN %(names)s
+	""".format(doctype=doctype, date_field=date_field),
+		{"names": names},
+		as_dict=1,
+	)
+	return {r.name: r.doc_date for r in rows}
+
+
+def get_credit_note_dates(si_vouchers):
+	"""A Credit Note is a Sales Invoice with is_return = 1."""
+	if not si_vouchers:
+		return {}
+
+	rows = frappe.db.sql(
+		"""
+		SELECT name, posting_date
+		FROM `tabSales Invoice`
+		WHERE name IN %(names)s
+			AND is_return = 1
+	""",
+		{"names": si_vouchers},
+		as_dict=1,
+	)
+	return {
+		("Sales Invoice", r.name): {"cn_number": r.name, "cn_date": r.posting_date}
+		for r in rows
+	}
 
 
 def get_voucher_details(voucher_map):
