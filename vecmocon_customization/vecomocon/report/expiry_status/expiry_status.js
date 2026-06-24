@@ -92,6 +92,8 @@ frappe.query_reports["Expiry Status"] = {
 				value = "<span style='color:red;font-weight:bold'>" + value + "</span>";
 			} else if (data.status == "Expires Today") {
 				value = "<span style='color:#e65100;font-weight:bold'>" + value + "</span>";
+			} else if (data.status == "Valid") {
+				value = "<span style='color:green;font-weight:bold'>" + value + "</span>";
 			}
 		}
 
