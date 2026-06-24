@@ -15,8 +15,6 @@ from frappe.utils import date_diff, flt
 # ---------------------------------------------------------------------------
 # "Supplier Location" on the Supplier.
 SUPPLIER_LOCATION_FIELDS = ("custom_location", "supplier_location", "custom_supplier_location", "country")
-# "Debit Note status (Ok/Hold/Rejected)" on the Purchase Invoice (debit note).
-DEBIT_NOTE_STATUS_FIELDS = ("custom_debit_note_status", "debit_note_status")
 
 
 def execute(filters=None):
@@ -94,7 +92,6 @@ def get_columns():
 			"options": "Company:company:default_currency",
 			"width": 110,
 		},
-		{"label": _("Debit Note Status (Ok/Hold/Rejected)"), "fieldname": "debit_note_status", "fieldtype": "Data", "width": 130},
 		{"label": _("Payment Term"), "fieldname": "payment_term", "fieldtype": "Data", "width": 140},
 		{"label": _("MR Requester Name"), "fieldname": "mr_requester_name", "fieldtype": "Data", "width": 150},
 		{"label": _("PO Creator Name"), "fieldname": "po_creator_name", "fieldtype": "Data", "width": 150},
@@ -118,12 +115,12 @@ def get_data(filters):
 
 	# Resolve the optional / custom field names once.
 	supplier_loc_field = first_existing_field("Supplier", SUPPLIER_LOCATION_FIELDS)
-	debit_status_field = first_existing_field("Purchase Invoice", DEBIT_NOTE_STATUS_FIELDS)
 
 	# Build lookup maps for the related documents.
 	mr_map, mri_qty = get_material_request_info(poi_rows)
-	pr_map = get_purchase_receipt_info(poi_names)
-	pi_map, pi_names = get_purchase_invoice_info(poi_names, debit_status_field)
+	pr_map, pri_to_poi = get_purchase_receipt_info(poi_names)
+	qi_rejected = get_quality_inspection_info(pri_to_poi)
+	pi_map, pi_names = get_purchase_invoice_info(poi_names)
 	payment_map = get_payment_info(pi_names)
 	item_map = get_item_info({r.item_code for r in poi_rows})
 	supplier_map = get_supplier_info({po.supplier for po in po_rows}, supplier_loc_field)
@@ -197,9 +194,8 @@ def get_data(filters):
 			"supplier_location": supplier.get("location"),
 			"hsn": poi.get("gst_hsn_code"),
 			# Quality / debit note
-			"rejection_qty": pr.get("rejected_qty"),
-			"debit_note_inr": flt(pi.get("debit_note_amount")),
-			"debit_note_status": pi.get("debit_note_status"),
+			"rejection_qty": qi_rejected.get(poi.name),
+			"debit_note_inr": pi.get("debit_note_amount"),
 			# Misc
 			"payment_term": po.payment_terms_template,
 			"mr_requester_name": user_map.get(mr.owner) if mr else None,
@@ -299,14 +295,21 @@ def get_material_request_info(poi_rows):
 
 
 def get_purchase_receipt_info(poi_names):
-	"""Aggregate Purchase Receipt data per Purchase Order Item."""
+	"""Aggregate Purchase Receipt data per Purchase Order Item.
+
+	Returns ``(pr_map, pri_to_poi)`` where ``pri_to_poi`` maps each Purchase
+	Receipt Item name to its originating Purchase Order Item.  The latter is
+	used to attribute Quality Inspection rejections back to the PO line.
+	"""
 	pri_rows = frappe.get_all(
 		"Purchase Receipt Item",
 		filters={"purchase_order_item": ["in", poi_names], "docstatus": 1},
-		fields=["parent", "purchase_order_item", "received_qty", "rejected_qty"],
+		fields=["name", "parent", "purchase_order_item", "received_qty"],
 	)
 	if not pri_rows:
-		return {}
+		return {}, {}
+
+	pri_to_poi = {r.name: r.purchase_order_item for r in pri_rows}
 
 	pr_names = {r.parent for r in pri_rows}
 	pr_headers = {
@@ -318,7 +321,7 @@ def get_purchase_receipt_info(poi_names):
 		)
 	}
 
-	agg = defaultdict(lambda: {"numbers": set(), "statuses": set(), "dates": [], "rejected_qty": 0.0})
+	agg = defaultdict(lambda: {"numbers": set(), "statuses": set(), "dates": []})
 	for r in pri_rows:
 		key = r.purchase_order_item
 		header = pr_headers.get(r.parent)
@@ -329,7 +332,6 @@ def get_purchase_receipt_info(poi_names):
 				bucket["statuses"].add(header.status)
 			if header.posting_date:
 				bucket["dates"].append(header.posting_date)
-		bucket["rejected_qty"] += flt(r.rejected_qty)
 
 	result = {}
 	for key, bucket in agg.items():
@@ -337,12 +339,40 @@ def get_purchase_receipt_info(poi_names):
 			"numbers": join_set(bucket["numbers"]),
 			"statuses": join_set(bucket["statuses"]),
 			"earliest_date": min(bucket["dates"]) if bucket["dates"] else None,
-			"rejected_qty": bucket["rejected_qty"],
 		}
-	return result
+	return result, pri_to_poi
 
 
-def get_purchase_invoice_info(poi_names, debit_status_field):
+def get_quality_inspection_info(pri_to_poi):
+	"""Sum the rejected qty recorded on Quality Inspections per PO line.
+
+	Quality Inspections for incoming material reference the Purchase Receipt
+	line via ``child_row_reference`` (the Purchase Receipt Item name); the
+	rejected quantity lives on the custom field ``custom_rejected_qty``.
+	Returns ``{purchase_order_item: rejected_qty}``.
+	"""
+	if not pri_to_poi:
+		return {}
+
+	qi_rows = frappe.get_all(
+		"Quality Inspection",
+		filters={
+			"reference_type": "Purchase Receipt",
+			"child_row_reference": ["in", list(pri_to_poi.keys())],
+			"docstatus": 1,
+		},
+		fields=["child_row_reference", "custom_rejected_qty"],
+	)
+
+	rejected = defaultdict(float)
+	for r in qi_rows:
+		poi = pri_to_poi.get(r.child_row_reference)
+		if poi:
+			rejected[poi] += flt(r.custom_rejected_qty)
+	return dict(rejected)
+
+
+def get_purchase_invoice_info(poi_names):
 	"""Aggregate Purchase Invoice data per Purchase Order Item."""
 	pii_rows = frappe.get_all(
 		"Purchase Invoice Item",
@@ -363,8 +393,6 @@ def get_purchase_invoice_info(poi_names, debit_status_field):
 		"status",
 		"is_return",
 	]
-	if debit_status_field:
-		header_fields.append(debit_status_field)
 
 	pi_headers = {
 		r.name: r
@@ -382,10 +410,10 @@ def get_purchase_invoice_info(poi_names, debit_status_field):
 			"supplier_dates": [],
 			"amount": 0.0,
 			"billed_qty": 0.0,
+			"debit_note_names": set(),
 			"debit_note_amount": 0.0,
 			"outstanding_invoices": {},
 			"grand_total_invoices": {},
-			"debit_note_status": set(),
 		}
 	)
 
@@ -398,9 +426,8 @@ def get_purchase_invoice_info(poi_names, debit_status_field):
 
 		if header.is_return:
 			# Debit note (purchase return).
+			bucket["debit_note_names"].add(header.name)
 			bucket["debit_note_amount"] += abs(flt(r.amount))
-			if debit_status_field and header.get(debit_status_field):
-				bucket["debit_note_status"].add(header.get(debit_status_field))
 			continue
 
 		bucket["invoice_names"].add(header.name)
@@ -428,8 +455,8 @@ def get_purchase_invoice_info(poi_names, debit_status_field):
 			"billed_qty": bucket["billed_qty"],
 			"outstanding": sum(bucket["outstanding_invoices"].values()),
 			"grand_total": sum(bucket["grand_total_invoices"].values()),
-			"debit_note_amount": bucket["debit_note_amount"],
-			"debit_note_status": join_set(bucket["debit_note_status"]),
+			# Blank (None) when no debit note / purchase return exists for the line.
+			"debit_note_amount": bucket["debit_note_amount"] if bucket["debit_note_names"] else None,
 		}
 
 	all_invoice_names = list({n for b in result.values() for n in b["invoice_names"]})
