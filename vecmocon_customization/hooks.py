@@ -48,6 +48,8 @@ doctype_js = {
     "Quality Inspection": "public/js/quality_inspection.js",
     "Subcontracting Receipt": "public/js/subcontracting_receipt.js",
     "Journal Entry": "public/js/journal_entry.js",
+    "Item": "public/js/item.js",
+    "Purchase Order": "public/js/purchase_order.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -297,6 +299,7 @@ doc_events = {
     },
     "Purchase Order": {
         "before_save": "vecmocon_customization.override.purchase_order.purchase_order_before_save",
+        "on_update": "vecmocon_customization.override.purchase_order.reset_rejected_to_draft",
     },
     "Material Request": {
         "on_update_after_submit": "vecmocon_customization.override.material_request.material_request_on_update_after_submit",
@@ -310,6 +313,9 @@ doc_events = {
     "Subcontracting Receipt": {
         "before_validate": "vecmocon_customization.override.subcontracting_receipt.before_validate",
         "validate": "vecmocon_customization.override.subcontracting_receipt.validate",
+    },
+    "Item": {
+        "on_update": "vecmocon_customization.override.item.reset_rejected_to_draft",
     },
 }
 
