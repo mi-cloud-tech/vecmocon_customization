@@ -33,7 +33,7 @@ def quality_inspection_before_submit(doc, method):
         frappe.throw(f"The sum of Acceted Qty & Rejected Qty. Not Matching to Total Qty")
 
     doc.custom_submitted_date = frappe.utils.now_datetime().date()
-    doc.custom_delay_days = (doc.custom_submitted_date - doc.custom_due_date).days if doc.custom_due_date else 0
+    doc.custom_delay_days = (doc.custom_submitted_date - frappe.utils.getdate(doc.custom_due_date)).days if doc.custom_due_date else 0
 
 def quality_inspection_on_submit(doc, method):
     #Create Stock Entry to transfer items to quality warehouse if inspection is accepted
