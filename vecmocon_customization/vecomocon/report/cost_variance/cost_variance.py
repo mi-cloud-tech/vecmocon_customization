@@ -77,7 +77,7 @@ def get_data(report_filters):
 		for index, row in enumerate(group):
 			if index != 0:
 				# One receipt/FG has many raw materials: show parent data in the first row only
-				for field in ["name", "posting_date", "supplier", "main_item_code"]:
+				for field in ["name", "posting_date", "supplier", "main_item_code", "bom_no"]:
 					row[field] = ""
 			data.append(row)
 
@@ -126,6 +126,10 @@ def get_conditions(report_filters):
 		conditions.append("sup.main_item_code = %(production_item)s")
 		params["production_item"] = report_filters.get("production_item")
 
+	if report_filters.get("bom"):
+		conditions.append("ri.bom = %(bom)s")
+		params["bom"] = report_filters.get("bom")
+
 	return " and ".join(conditions), params
 
 
@@ -152,6 +156,13 @@ def get_columns():
 			"fieldtype": "Link",
 			"options": "Item",
 			"width": 150,
+		},
+		{
+			"label": _("BOM"),
+			"fieldname": "bom_no",
+			"fieldtype": "Link",
+			"options": "BOM",
+			"width": 170,
 		},
 		{
 			"label": _("Raw Material"),
