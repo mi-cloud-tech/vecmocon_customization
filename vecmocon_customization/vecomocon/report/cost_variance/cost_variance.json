@@ -15,7 +15,7 @@
  "name": "Cost Variance",
  "owner": "Administrator",
  "prepared_report": 0,
- "ref_doctype": "Subcontracting Receipt",
+ "ref_doctype": "Subcontracting Order",
  "report_name": "Cost Variance",
  "report_type": "Script Report",
  "roles": [
