@@ -58,6 +58,27 @@ frappe.query_reports["Cost Variance"] = {
 		},
 	],
 	formatter: function (value, row, column, data, default_formatter) {
+		// Render Stock Entry / Subcontracting Receipt (one or many, comma-separated)
+		// as clickable links to their forms.
+		const doc_route = {
+			stock_entry: "stock-entry",
+			subcontracting_receipt: "subcontracting-receipt",
+		};
+		if (doc_route[column.fieldname] && data && data[column.fieldname]) {
+			const route = doc_route[column.fieldname];
+			return data[column.fieldname]
+				.split(",")
+				.map((n) => n.trim())
+				.filter((n) => n)
+				.map(
+					(name) =>
+						`<a href="/app/${route}/${encodeURIComponent(name)}">${frappe.utils.escape_html(
+							name
+						)}</a>`
+				)
+				.join(", ");
+		}
+
 		value = default_formatter(value, row, column, data);
 
 		const variance_fields = ["qty_variance", "price_variance", "material_variance"];
