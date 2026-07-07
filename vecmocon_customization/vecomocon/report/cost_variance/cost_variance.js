@@ -26,10 +26,10 @@ frappe.query_reports["Cost Variance"] = {
 			reqd: 1,
 		},
 		{
-			label: __("Subcontracting Receipt"),
+			label: __("Subcontracting Order"),
 			fieldname: "name",
 			fieldtype: "Link",
-			options: "Subcontracting Receipt",
+			options: "Subcontracting Order",
 			get_query: function () {
 				return { filters: { docstatus: 1 } };
 			},
@@ -60,7 +60,7 @@ frappe.query_reports["Cost Variance"] = {
 	formatter: function (value, row, column, data, default_formatter) {
 		value = default_formatter(value, row, column, data);
 
-		const variance_fields = ["qty_variance", "rate_variance", "total_variance"];
+		const variance_fields = ["qty_variance", "price_variance", "material_variance"];
 		if (variance_fields.includes(column.fieldname) && data) {
 			const raw = data[column.fieldname];
 			if (raw < 0) {
