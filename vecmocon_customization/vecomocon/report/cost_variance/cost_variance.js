@@ -46,6 +46,16 @@ frappe.query_reports["Cost Variance"] = {
 			fieldtype: "Link",
 			options: "Item",
 		},
+		{
+			label: __("BOM"),
+			fieldname: "bom",
+			fieldtype: "Link",
+			options: "BOM",
+			get_query: function () {
+				const item = frappe.query_report.get_filter_value("production_item");
+				return item ? { filters: { item: item } } : {};
+			},
+		},
 	],
 	formatter: function (value, row, column, data, default_formatter) {
 		value = default_formatter(value, row, column, data);
