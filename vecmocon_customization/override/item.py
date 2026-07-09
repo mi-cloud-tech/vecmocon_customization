@@ -1,5 +1,17 @@
 import frappe
 
+APPROVED_STATE = "Approved"
+
+LINK_SEARCH_CMD = "frappe.desk.search.search_link"
+
+
+def item_query_conditions(user=None, doctype=None):
+  
+    if frappe.form_dict.get("cmd") != LINK_SEARCH_CMD:
+        return ""
+
+    return f"`tabItem`.`workflow_state` = {frappe.db.escape(APPROVED_STATE)}"
+
 
 def reset_rejected_to_draft(doc, method=None):
     """When an Item is rejected through the Master Data approval workflow,
