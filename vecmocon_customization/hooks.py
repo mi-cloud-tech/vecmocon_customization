@@ -124,6 +124,13 @@ after_install = "vecmocon_customization.install.after_install"
 # -----------
 # Permissions evaluated in scripted ways
 
+# Only Items that have been Approved through the master-data workflow may be
+# selected in transaction Link-field dropdowns (PO, PR, Material Request, Stock
+# Entry, BOM, etc.). The Item master list / reports are unaffected.
+permission_query_conditions = {
+    "Item": "vecmocon_customization.override.item.item_query_conditions",
+}
+
 # permission_query_conditions = {
 # 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
