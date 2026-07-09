@@ -2,10 +2,11 @@
 # For license information, please see license.txt
 
 from collections import defaultdict
+from urllib.parse import quote
 
 import frappe
 from frappe import _
-from frappe.utils import date_diff, flt
+from frappe.utils import date_diff, escape_html, flt
 
 # ---------------------------------------------------------------------------
 # Configurable field sources for non-standard / custom fields.
@@ -38,6 +39,7 @@ def get_columns():
 		{"label": _("Item Code"), "fieldname": "item_code", "fieldtype": "Link", "options": "Item", "width": 120},
 		{"label": _("Item Description"), "fieldname": "item_description", "fieldtype": "Data", "width": 220},
 		{"label": _("UOM"), "fieldname": "uom", "fieldtype": "Link", "options": "UOM", "width": 70},
+		{"label": _("Standard Pack Quantity"), "fieldname": "standard_pack_qty", "fieldtype": "Float", "width": 130},
 		{"label": _("PO Qty"), "fieldname": "po_qty", "fieldtype": "Float", "width": 80},
 		{"label": _("Open PO Qty"), "fieldname": "open_po_qty", "fieldtype": "Float", "width": 95},
 		{"label": _("Received PO Qty / PR Qty"), "fieldname": "received_qty", "fieldtype": "Float", "width": 120},
@@ -47,6 +49,8 @@ def get_columns():
 		{"label": _("Warehouse"), "fieldname": "warehouse", "fieldtype": "Link", "options": "Warehouse", "width": 150},
 		{"label": _("Invoice Number"), "fieldname": "invoice_number", "fieldtype": "Data", "width": 150},
 		{"label": _("Invoice Date"), "fieldname": "invoice_date", "fieldtype": "Date", "width": 95},
+		{"label": _("Invoice Punch (Y/N)"), "fieldname": "invoice_punch", "fieldtype": "Data", "width": 110},
+		{"label": _("Invoice Punch Date"), "fieldname": "invoice_punch_date", "fieldtype": "Date", "width": 110},
 		{"label": _("Payment Status"), "fieldname": "payment_status", "fieldtype": "Data", "width": 110},
 		{"label": _("Payment Date"), "fieldname": "payment_date", "fieldtype": "Data", "width": 110},
 		{"label": _("Payment Reference No"), "fieldname": "payment_reference_no", "fieldtype": "Data", "width": 140},
@@ -85,6 +89,7 @@ def get_columns():
 		{"label": _("Supplier Location"), "fieldname": "supplier_location", "fieldtype": "Data", "width": 130},
 		{"label": _("HSN"), "fieldname": "hsn", "fieldtype": "Data", "width": 100},
 		{"label": _("Rejection Qty"), "fieldname": "rejection_qty", "fieldtype": "Float", "width": 95},
+		{"label": _("Quality Hold Qty"), "fieldname": "quality_hold_qty", "fieldtype": "Float", "width": 110},
 		{
 			"label": _("Debit Note INR"),
 			"fieldname": "debit_note_inr",
@@ -92,6 +97,7 @@ def get_columns():
 			"options": "Company:company:default_currency",
 			"width": 110,
 		},
+		{"label": _("Debit Note Status (Return)"), "fieldname": "debit_note_status", "fieldtype": "Data", "width": 150},
 		{"label": _("Payment Term"), "fieldname": "payment_term", "fieldtype": "Data", "width": 140},
 		{"label": _("MR Requester Name"), "fieldname": "mr_requester_name", "fieldtype": "Data", "width": 150},
 		{"label": _("PO Creator Name"), "fieldname": "po_creator_name", "fieldtype": "Data", "width": 150},
@@ -120,6 +126,7 @@ def get_data(filters):
 	mr_map, mri_qty = get_material_request_info(poi_rows)
 	pr_map, pri_to_poi = get_purchase_receipt_info(poi_names)
 	qi_rejected = get_quality_inspection_info(pri_to_poi)
+	qi_hold = get_quality_hold_info(poi_names)
 	pi_map, pi_names = get_purchase_invoice_info(poi_names)
 	payment_map = get_payment_info(pi_names)
 	item_map = get_item_info({r.item_code for r in poi_rows})
@@ -160,17 +167,20 @@ def get_data(filters):
 			"item_code": poi.item_code,
 			"item_description": poi.description,
 			"uom": poi.uom or poi.stock_uom,
+			"standard_pack_qty": item.get("standard_pack_qty"),
 			"po_qty": flt(poi.qty),
 			"open_po_qty": flt(poi.qty) - received_qty,
 			"received_qty": received_qty,
 			# Purchase Receipt
-			"pr_number": pr.get("numbers"),
+			"pr_number": link_list(pr.get("names"), "Purchase Receipt"),
 			"pr_date": pr.get("earliest_date"),
 			"pr_status": pr.get("statuses"),
 			"warehouse": poi.warehouse,
 			# Purchase Invoice
-			"invoice_number": pi.get("invoice_numbers"),
+			"invoice_number": link_list(pi.get("invoice_names"), "Purchase Invoice"),
 			"invoice_date": pi.get("earliest_date"),
+			"invoice_punch": "Yes" if pi.get("invoice_names") else "No",
+			"invoice_punch_date": pi.get("earliest_date"),
 			"supplier_invoice_number": pi.get("supplier_invoice_numbers"),
 			"supplier_invoice_date": pi.get("earliest_supplier_date"),
 			"invoice_amount": flt(pi.get("amount")),
@@ -195,7 +205,9 @@ def get_data(filters):
 			"hsn": poi.get("gst_hsn_code"),
 			# Quality / debit note
 			"rejection_qty": qi_rejected.get(poi.name),
+			"quality_hold_qty": qi_hold.get(poi.name),
 			"debit_note_inr": pi.get("debit_note_amount"),
+			"debit_note_status": pi.get("debit_note_status"),
 			# Misc
 			"payment_term": po.payment_terms_template,
 			"mr_requester_name": user_map.get(mr.owner) if mr else None,
@@ -336,7 +348,7 @@ def get_purchase_receipt_info(poi_names):
 	result = {}
 	for key, bucket in agg.items():
 		result[key] = {
-			"numbers": join_set(bucket["numbers"]),
+			"names": sorted(bucket["numbers"]),
 			"statuses": join_set(bucket["statuses"]),
 			"earliest_date": min(bucket["dates"]) if bucket["dates"] else None,
 		}
@@ -370,6 +382,46 @@ def get_quality_inspection_info(pri_to_poi):
 		if poi:
 			rejected[poi] += flt(r.custom_rejected_qty)
 	return dict(rejected)
+
+
+def get_quality_hold_info(poi_names):
+	"""Sum the sample qty of Quality Inspections still on hold, per PO line.
+
+	An inspection is "on hold" when its workflow state is
+	``Pending For Quality Inspection``.  These inspections are usually still in
+	draft, so - unlike rejections - they are mapped to the PO line through the
+	Purchase Receipt Item referenced by ``child_row_reference`` regardless of the
+	receipt's docstatus (cancelled receipts excluded).  Returns
+	``{purchase_order_item: sample_size}``.
+	"""
+	if not poi_names:
+		return {}
+
+	pri_rows = frappe.get_all(
+		"Purchase Receipt Item",
+		filters={"purchase_order_item": ["in", poi_names], "docstatus": ["<", 2]},
+		fields=["name", "purchase_order_item"],
+	)
+	pri_to_poi = {r.name: r.purchase_order_item for r in pri_rows}
+	if not pri_to_poi:
+		return {}
+
+	qi_rows = frappe.get_all(
+		"Quality Inspection",
+		filters={
+			"reference_type": "Purchase Receipt",
+			"child_row_reference": ["in", list(pri_to_poi.keys())],
+			"workflow_state": "Pending For Quality Inspection",
+		},
+		fields=["child_row_reference", "sample_size"],
+	)
+
+	hold = defaultdict(float)
+	for r in qi_rows:
+		poi = pri_to_poi.get(r.child_row_reference)
+		if poi:
+			hold[poi] += flt(r.sample_size)
+	return dict(hold)
 
 
 def get_purchase_invoice_info(poi_names):
@@ -457,6 +509,7 @@ def get_purchase_invoice_info(poi_names):
 			"grand_total": sum(bucket["grand_total_invoices"].values()),
 			# Blank (None) when no debit note / purchase return exists for the line.
 			"debit_note_amount": bucket["debit_note_amount"] if bucket["debit_note_names"] else None,
+			"debit_note_status": "Return" if bucket["debit_note_names"] else None,
 		}
 
 	all_invoice_names = list({n for b in result.values() for n in b["invoice_names"]})
@@ -523,10 +576,16 @@ def get_item_info(item_codes):
 	if not item_codes:
 		return {}
 
+	fields = ["name", "item_name", "item_group", "brand", "min_order_qty"]
+	# "Standard Pack Quantity" lives on the subcontracting section of the Item.
+	has_std_pack = frappe.get_meta("Item").has_field("custom_standard_packaging")
+	if has_std_pack:
+		fields.append("custom_standard_packaging")
+
 	rows = frappe.get_all(
 		"Item",
 		filters={"name": ["in", list(item_codes)]},
-		fields=["name", "item_name", "item_group", "brand", "min_order_qty"],
+		fields=fields,
 	)
 	info = {}
 	for r in rows:
@@ -535,6 +594,7 @@ def get_item_info(item_codes):
 			"item_group": r.item_group,
 			"brand": r.brand,
 			"min_order_qty": r.min_order_qty,
+			"standard_pack_qty": r.get("custom_standard_packaging") if has_std_pack else None,
 		}
 	return info
 
@@ -573,6 +633,27 @@ def first_existing_field(doctype, candidates):
 
 def join_set(values):
 	return ", ".join(sorted({str(v) for v in values if v}))
+
+
+def link_list(names, doctype):
+	"""Render document names as clickable desk form links.
+
+	The report aggregates several receipts / invoices onto a single PO line, so
+	the cell can hold more than one document.  A plain ``Link`` column only
+	handles a single value, so we keep the column as ``Data`` and emit anchor
+	tags (rendered as HTML by the report grid).  The name is URL-encoded so
+	values containing ``/`` (e.g. ``PI/V/26-27/0011``) route correctly.
+	"""
+	if not names:
+		return ""
+	slug = doctype.lower().replace(" ", "-")
+	links = [
+		'<a href="/app/{slug}/{href}" data-doctype="{dt}" data-name="{esc}">{esc}</a>'.format(
+			slug=slug, href=quote(str(name), safe=""), dt=doctype, esc=escape_html(str(name))
+		)
+		for name in sorted({str(n) for n in names if n})
+	]
+	return ", ".join(links)
 
 
 def days_between(start, end):
