@@ -8,16 +8,6 @@ import frappe
 from frappe import _
 from frappe.utils import date_diff, escape_html, flt
 
-# ---------------------------------------------------------------------------
-# Configurable field sources for non-standard / custom fields.
-# The first field that actually exists on the doctype is used; otherwise the
-# column is left blank.  Adjust these when the corresponding custom fields are
-# created so the report picks them up automatically.
-# ---------------------------------------------------------------------------
-# "Supplier Location" on the Supplier.
-SUPPLIER_LOCATION_FIELDS = ("custom_location", "supplier_location", "custom_supplier_location", "country")
-
-
 def execute(filters=None):
 	filters = frappe._dict(filters or {})
 	columns = get_columns()
@@ -119,9 +109,6 @@ def get_data(filters):
 
 	poi_names = [r.name for r in poi_rows]
 
-	# Resolve the optional / custom field names once.
-	supplier_loc_field = first_existing_field("Supplier", SUPPLIER_LOCATION_FIELDS)
-
 	# Build lookup maps for the related documents.
 	mr_map, mri_qty = get_material_request_info(poi_rows)
 	pr_map, pri_to_poi = get_purchase_receipt_info(poi_names)
@@ -130,7 +117,7 @@ def get_data(filters):
 	pi_map, pi_names = get_purchase_invoice_info(poi_names)
 	payment_map = get_payment_info(pi_names)
 	item_map = get_item_info({r.item_code for r in poi_rows})
-	supplier_map = get_supplier_info({po.supplier for po in po_rows}, supplier_loc_field)
+	supplier_map = get_supplier_info({po.supplier for po in po_rows})
 	user_map = get_user_full_names(
 		{po.owner for po in po_rows} | {mr.owner for mr in mr_map.values()}
 	)
@@ -599,17 +586,39 @@ def get_item_info(item_codes):
 	return info
 
 
-def get_supplier_info(supplier_codes, location_field):
+def get_supplier_info(supplier_codes):
+	"""Return ``{supplier: {location: city}}``.
+
+	"Supplier Location" is the city of the supplier's primary address.  The
+	Supplier itself has no city field - it lives on the linked Address
+	(``supplier_primary_address`` -> ``Address.city``).
+	"""
 	supplier_codes = {c for c in supplier_codes if c}
-	if not supplier_codes or not location_field:
+	if not supplier_codes:
 		return {}
 
-	rows = frappe.get_all(
+	suppliers = frappe.get_all(
 		"Supplier",
 		filters={"name": ["in", list(supplier_codes)]},
-		fields=["name", location_field],
+		fields=["name", "supplier_primary_address"],
 	)
-	return {r.name: {"location": r.get(location_field)} for r in rows}
+
+	address_names = {s.supplier_primary_address for s in suppliers if s.supplier_primary_address}
+	city_by_address = {}
+	if address_names:
+		city_by_address = {
+			a.name: a.city
+			for a in frappe.get_all(
+				"Address",
+				filters={"name": ["in", list(address_names)]},
+				fields=["name", "city"],
+			)
+		}
+
+	return {
+		s.name: {"location": city_by_address.get(s.supplier_primary_address)}
+		for s in suppliers
+	}
 
 
 def get_user_full_names(user_ids):
@@ -625,12 +634,6 @@ def get_user_full_names(user_ids):
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
-def first_existing_field(doctype, candidates):
-	"""Return the first field from `candidates` that exists on `doctype`."""
-	meta = frappe.get_meta(doctype)
-	return next((f for f in candidates if meta.has_field(f)), None)
-
-
 def join_set(values):
 	return ", ".join(sorted({str(v) for v in values if v}))
 
