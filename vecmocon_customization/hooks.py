@@ -39,17 +39,31 @@ app_license = "mit"
 # webform_include_js = {"doctype": "public/js/doctype.js"}
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
+# Loaded on every transaction form: rejects a non-Approved Item the moment its
+# code is entered in the grid (instant feedback), complementing the server-side
+# `validate` guard which is the un-bypassable backstop.
+_APPROVED_ITEM_GUARD_JS = "public/js/approved_item_guard.js"
+
 # include js in doctype views
 doctype_js = {
-    "Purchase Receipt": "public/js/purchase_receipt.js",
+    "Purchase Receipt": ["public/js/purchase_receipt.js", _APPROVED_ITEM_GUARD_JS],
     "Company": "public/js/company.js",
-    "Material Request": "public/js/material_request.js",
+    "Material Request": ["public/js/material_request.js", _APPROVED_ITEM_GUARD_JS],
     "Payment Entry": "public/js/payment_entry.js",
     "Quality Inspection": "public/js/quality_inspection.js",
-    "Subcontracting Receipt": "public/js/subcontracting_receipt.js",
+    "Subcontracting Receipt": ["public/js/subcontracting_receipt.js", _APPROVED_ITEM_GUARD_JS],
     "Journal Entry": "public/js/journal_entry.js",
     "Item": "public/js/item.js",
-    "Purchase Order": "public/js/purchase_order.js",
+    "Purchase Order": ["public/js/purchase_order.js", _APPROVED_ITEM_GUARD_JS],
+    "Sales Order": _APPROVED_ITEM_GUARD_JS,
+    "Sales Invoice": _APPROVED_ITEM_GUARD_JS,
+    "Delivery Note": _APPROVED_ITEM_GUARD_JS,
+    "Quotation": _APPROVED_ITEM_GUARD_JS,
+    "Purchase Invoice": _APPROVED_ITEM_GUARD_JS,
+    "Stock Entry": _APPROVED_ITEM_GUARD_JS,
+    "Stock Reconciliation": _APPROVED_ITEM_GUARD_JS,
+    "BOM": _APPROVED_ITEM_GUARD_JS,
+    "Subcontracting Order": _APPROVED_ITEM_GUARD_JS,
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -271,29 +285,56 @@ override_doctype_class = {
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+# Every transaction that references an Item must only accept Items that have
+# cleared the master-data approval workflow (workflow_state == "Approved"). The
+# Link-field dropdown already hides non-Approved Items, but a code can still be
+# typed/pasted directly, so this server-side `validate` guard is the
+# authoritative enforcement point. It is registered on every item-bearing
+# transaction below.
+APPROVED_ITEMS_GUARD = "vecmocon_customization.override.item.validate_only_approved_items"
+
 doc_events = {
     "Sales Order": {
         "before_submit": "vecmocon_customization.override.sales_order.incoterm_customization_before_submit",
         "before_insert": "vecmocon_customization.override.sales_order.incoterm_customization_before_insert",
         "before_save": "vecmocon_customization.override.sales_order.custom_before_save",
+        "validate": APPROVED_ITEMS_GUARD,
+    },
+    "Quotation": {
+        "validate": APPROVED_ITEMS_GUARD,
+    },
+    "Sales Invoice": {
+        "validate": APPROVED_ITEMS_GUARD,
     },
     "Delivery Note": {
         "before_save": "vecmocon_customization.override.delivery_note.vehicle_number_regex",
         "on_update_after_submit": "vecmocon_customization.override.delivery_note.on_update_after_submit",
         "before_submit": "vecmocon_customization.override.delivery_note.custom_on_submit",
-        "validate": "vecmocon_customization.override.stock_validations.validate_delivery_note",
+        "validate": [
+            "vecmocon_customization.override.stock_validations.validate_delivery_note",
+            APPROVED_ITEMS_GUARD,
+        ],
     },
     "Purchase Receipt": {
         "before_insert": "vecmocon_customization.override.purchase_receipt.purchase_receipt_before_insert",
         "before_save": "vecmocon_customization.override.purchase_receipt.purchase_receipt_before_save",
-        "validate": "vecmocon_customization.override.stock_validations.validate_purchase_receipt",
+        "validate": [
+            "vecmocon_customization.override.stock_validations.validate_purchase_receipt",
+            APPROVED_ITEMS_GUARD,
+        ],
         "before_submit": "vecmocon_customization.override.purchase_receipt.purchase_receipt_before_submit",
         "on_submit": "vecmocon_customization.override.purchase_receipt.purchase_receipt_on_submit",
     },
     "Stock Entry": {
         "before_save": "vecmocon_customization.override.stock_validations.stock_entry_before_save",
-        "validate": "vecmocon_customization.override.stock_validations.validate_stock_entry",
+        "validate": [
+            "vecmocon_customization.override.stock_validations.validate_stock_entry",
+            APPROVED_ITEMS_GUARD,
+        ],
         "before_submit": "vecmocon_customization.override.stock_entry.stock_entry_before_submit",
+    },
+    "Stock Reconciliation": {
+        "validate": APPROVED_ITEMS_GUARD,
     },
     "Quality Inspection": {
         "before_insert": "vecmocon_customization.override.quality_inspection.quality_inspection_before_insert",
@@ -303,13 +344,19 @@ doc_events = {
     },
     "Purchase Invoice": {
         "before_save": "vecmocon_customization.override.purchase_invoice.purchase_invoice_before_save",
+        "validate": APPROVED_ITEMS_GUARD,
     },
     "Purchase Order": {
         "before_save": "vecmocon_customization.override.purchase_order.purchase_order_before_save",
         "on_update": "vecmocon_customization.override.purchase_order.reset_rejected_to_draft",
+        "validate": APPROVED_ITEMS_GUARD,
     },
     "Material Request": {
         "on_update_after_submit": "vecmocon_customization.override.material_request.material_request_on_update_after_submit",
+        "validate": APPROVED_ITEMS_GUARD,
+    },
+    "BOM": {
+        "validate": APPROVED_ITEMS_GUARD,
     },
     "Payment Entry": {
         "before_save": "vecmocon_customization.override.payment_entry.payment_entry_before_save",
@@ -317,9 +364,15 @@ doc_events = {
         "on_submit": "vecmocon_customization.override.payment_entry.on_submit",
         "on_cancel": "vecmocon_customization.override.payment_entry.on_cancel",
     },
+    "Subcontracting Order": {
+        "validate": APPROVED_ITEMS_GUARD,
+    },
     "Subcontracting Receipt": {
         "before_validate": "vecmocon_customization.override.subcontracting_receipt.before_validate",
-        "validate": "vecmocon_customization.override.subcontracting_receipt.validate",
+        "validate": [
+            "vecmocon_customization.override.subcontracting_receipt.validate",
+            APPROVED_ITEMS_GUARD,
+        ],
     },
     "Item": {
         "on_update": "vecmocon_customization.override.item.reset_rejected_to_draft",
