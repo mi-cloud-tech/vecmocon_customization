@@ -1,9 +1,11 @@
-import frappe, regex
+import re
+
+import frappe
 
 def vehicle_number_regex(self, method):
     vehicle_number_pattern = r'^[A-Z]{2}\s?[0-9]{1,2}\s?[A-Z]{1,2}\s?[0-9]{4}$'
     if self.vehicle_no:
-        if not regex.match(vehicle_number_pattern, self.vehicle_no):
+        if not re.match(vehicle_number_pattern, self.vehicle_no):
             frappe.throw("Invalid Vehicle Number format. Please enter a valid format (e.g., 'AB 12 CD 3456').")
 
 def custom_on_submit(self, method):

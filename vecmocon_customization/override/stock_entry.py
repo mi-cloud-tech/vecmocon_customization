@@ -8,6 +8,8 @@ from frappe.query_builder import DocType
 from frappe.query_builder.functions import Sum
 from erpnext.stock.doctype.stock_entry.stock_entry import StockEntry
 
+IS_FRAPPE_V16_OR_LATER = cint(frappe.__version__.split(".")[0]) >= 16
+
 
 class CustomStockEntry(StockEntry):
     """Custom Stock Entry class that overrides validate_subcontract_order method"""
@@ -125,7 +127,11 @@ class CustomStockEntry(StockEntry):
                         )
                     ).run()[0][0] or 0
 
-                if flt(total_supplied - total_returned, precision) > flt(total_allowed, precision) and not custom_over_transfer_allowance:
+                # v16 runs this check from `validate`, before the current row is in the DB,
+                # so it must be added explicitly. v15 runs it from `on_submit`, when the
+                # row is already counted in `total_supplied`.
+                current_qty = flt(se_item.transfer_qty) if IS_FRAPPE_V16_OR_LATER else 0
+                if flt(total_supplied + current_qty - total_returned, precision) > flt(total_allowed, precision) and not custom_over_transfer_allowance:
                     frappe.throw(
                         _("Row {0}# Item {1} cannot be transferred more than {2} against {3} {4}").format(
                             se_item.idx,
